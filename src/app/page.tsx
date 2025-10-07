@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Navbar from './Components/Navbar';
 
 export default function Home() {
   const [showAboutPreview, setShowAboutPreview] = useState(false);
@@ -14,19 +15,32 @@ export default function Home() {
       {/* ───── Caja principal gris (contenido dentro) ───── */}
       <div className="w-full max-w-6xl bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
 
-        {/* 🔹 Navbar */}
-        <nav className="w-full bg-blue-600 text-white shadow-md z-50">
-          <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-            <div className="text-lg font-bold">Diego Mallama</div>
-            <ul className="flex gap-6">
-              <li><a href="#acerca" className="hover:text-blue-200">Acerca de mí</a></li>
-              <li><a href="#ex" className="hover:text-blue-200">Ex. acadm</a></li>
-              <li><a href="#proyectos" className="hover:text-blue-200">Proyectos</a></li>
-              <li><a href="#testimonios" className="hover:text-blue-200">Testimonios</a></li>
-              <li><a href="#contactos" className="hover:text-blue-200">Contactos</a></li>
-            </ul>
-          </div>
-        </nav>
+        {/* 🔹 Contenedor de navbar + botones */}
+        <div className="flex items-center justify-between px10 py-3">
+          {/* Botón idioma */}
+          <button className="px-10 py-2.5 rounded-lg bg-blue-200 text-blue-900 hover:bg-blue-300">
+            EN
+          </button>
+
+          {/* Navbar */}
+          <nav className="flex-1 mx-15 bg-blue-600 text-white shadow-md z-50 rounded-4xl py-0.2">
+            <div className="flex justify-center items-center p-4 w-full">
+              <ul className="flex gap-6">
+                <li><a href="#acerca" className="hover:text-blue-200">Principal</a></li>
+                <li><a href="#acerca" className="hover:text-blue-200">Acerca de mí</a></li>
+                <li><a href="#ex" className="hover:text-blue-200">Ex. acadm</a></li>
+                <li><a href="#proyectos" className="hover:text-blue-200">Proyectos</a></li>
+                <li><a href="#testimonios" className="hover:text-blue-200">Testimonios</a></li>
+                <li><a href="#contactos" className="hover:text-blue-200">Contactos</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          {/* Botón modo claro/oscuro */}
+          <button className="px-7.5 py-2.5 rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400">
+            🌙
+          </button>
+        </div>
 
         {/* 🔹 Hero */}
         <section className="flex flex-col items-center text-center pt-16 pb-12 px-4">
@@ -35,9 +49,14 @@ export default function Home() {
             alt="Foto perfil"
             className="w-32 h-32 rounded-full shadow-md"
           />
-          <h2 className="text-3xl font-bold mt-6">
-            Soy Diego Alejandro Mallama Yandun
-          </h2>
+
+            <div className="flex flex-col items-center bg-blue-200 rounded-lg py-0.5 px-12 mb-2.5 mt-2.5">
+              <h2 className="text-2xl font-bold mt-6 text-blue-400">
+              Soy Diego Alejandro
+              <br />
+              Mallama Yandun
+            </h2>
+            </div>
           <p className="mt-3 max-w-lg text-gray-700">
             Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.
           </p>
@@ -61,10 +80,10 @@ export default function Home() {
           </button>
         </section>
 
-        {/* 🔹 Cards (dentro del contenedor) */}
+        {/* 🔹 Cards */}
         <section className="relative max-w-6xl mx-auto pb-16 px-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 p-6">
-            {/* Card 1: Acerca de mi */}
+            {/* Acerca de mí */}
             <div className="relative">
               <div
                 className="bg-white shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50"
@@ -75,7 +94,6 @@ export default function Home() {
                 <a href="/Acerca_de_mi" className="font-semibold text-blue-800">Acerca de mi</a>
               </div>
 
-              {/* Preview Acerca de mi */}
               {showAboutPreview && (
                 <div
                   className="absolute top-0 left-0 bg-white shadow-2xl p-6 rounded-lg w-80 transform -translate-y-2 z-20 border border-blue-200 transition-all duration-200"
@@ -123,7 +141,7 @@ export default function Home() {
               )}
             </div>
 
-            {/* Card 2: Experiencia Académica */}
+            {/* Experiencia Académica */}
             <div className="relative">
               <div
                 className="bg-white shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-lg"
@@ -134,7 +152,6 @@ export default function Home() {
                 <a href="/Ex_academica" className="font-semibold text-blue-800">Ex. acadm</a>
               </div>
 
-              {/* Preview Experiencia Académica */}
               {showAcademicPreview && (
                 <div
                   className="absolute top-0 left-0 bg-gradient-to-br from-blue-50 to-indigo-100 shadow-2xl p-6 rounded-lg w-80 transform -translate-y-2 z-20 border border-blue-200 transition-all duration-200"
@@ -176,7 +193,7 @@ export default function Home() {
               )}
             </div>
 
-            {/* Card 3: Proyectos */}
+            {/* Proyectos */}
             <div className="relative">
               <div
                 className="bg-white shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-lg"
@@ -187,7 +204,6 @@ export default function Home() {
                 <a href="/Proyectos" className="font-semibold text-blue-800">Proyectos</a>
               </div>
 
-              {/* Preview Proyectos */}
               {showProjectsPreview && (
                 <div
                   className="absolute top-0 left-0 bg-gradient-to-br from-purple-50 to-pink-100 shadow-2xl p-6 rounded-lg w-80 transform -translate-y-2 z-20 border border-purple-200 transition-all duration-200"
@@ -233,7 +249,7 @@ export default function Home() {
               )}
             </div>
 
-            {/* Card 4: Testimonios */}
+            {/* Testimonios */}
             <div className="relative">
               <div
                 className="bg-white shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-lg"
@@ -244,7 +260,6 @@ export default function Home() {
                 <a href="/Testimonios" className="font-semibold text-blue-800">Testimonios</a>
               </div>
 
-              {/* Preview Testimonios */}
               {showTestimonialsPreview && (
                 <div
                   className="absolute top-0 left-0 bg-gradient-to-br from-green-50 to-teal-100 shadow-2xl p-6 rounded-lg w-80 transform -translate-y-2 z-20 border border-green-200 transition-all duration-200"
@@ -282,7 +297,7 @@ export default function Home() {
               )}
             </div>
 
-            {/* Card 5: Contactos */}
+            {/* Contactos */}
             <div className="relative">
               <div
                 className="bg-white shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-lg"
@@ -293,7 +308,6 @@ export default function Home() {
                 <a href="/Contactos" className="font-semibold text-blue-800">Contactos</a>
               </div>
 
-              {/* Preview Contactos */}
               {showContactPreview && (
                 <div
                   className="absolute top-0 left-0 bg-gradient-to-br from-orange-50 to-red-100 shadow-2xl p-6 rounded-lg w-80 transform -translate-y-2 z-20 border border-orange-200 transition-all duration-200"
