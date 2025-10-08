@@ -1,3 +1,9 @@
+"use client";
+
+import { useTheme } from "../context/ThemeContext";
+import { translations } from "../context/Translations";
+
+
 export default function Contactos() {
   return (
     <main className="min-h-screen p-10">

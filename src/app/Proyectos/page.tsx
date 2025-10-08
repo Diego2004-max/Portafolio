@@ -1,3 +1,8 @@
+"use client";
+
+import { useTheme } from "../context/ThemeContext";
+import { translations } from "../context/Translations";
+
 export default function Proyectos() {
   return (
     <main className="min-h-screen p-10">

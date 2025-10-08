@@ -2,8 +2,12 @@
 
 import { useState } from 'react';
 import Navbar from './Components/Navbar';
+import { useTheme } from './context/ThemeContext';
+import { translations } from './context/Translations';
+
 
 export default function Home() {
+  const { language } = useTheme();
   const [showAboutPreview, setShowAboutPreview] = useState(false);
   const [showAcademicPreview, setShowAcademicPreview] = useState(false);
   const [showProjectsPreview, setShowProjectsPreview] = useState(false);

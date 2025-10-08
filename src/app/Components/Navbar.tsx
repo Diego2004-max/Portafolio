@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "../context/ThemeContext";
+import { translations } from "../context/Translations";
 
 export default function Navbar() {
   const { theme, toggleTheme, language, toggleLanguage } = useTheme();
@@ -12,11 +13,7 @@ export default function Navbar() {
       }`}
     >
       <h1 className="text-lg font-semibold">
-        {language === "es"
-          ? "Página Principal"
-          : language === "en"
-          ? "Home Page"
-          : "Page d'accueil"}
+        {translations[language].homeTitle}
       </h1>
 
       <div className="flex gap-3">
