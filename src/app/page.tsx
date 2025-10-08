@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white flex justify-center items-start py-10 px-4">
       {/* ───── Caja principal gris (contenido dentro) ───── */}
-      <div className="w-full max-w-6xl bg-gray-100 rounded-2xl shadow-lg overflow-hidden">
+      <div className="w-full max-w-6xl bg-gray-100 rounded-2xl shadow-lg overflow-visible relative">
 
         {/* 🔹 Contenedor de navbar + botones */}
         <div className="flex items-center justify-between px10 py-3">
@@ -30,12 +30,11 @@ export default function Home() {
           <nav className="flex-1 mx-15 bg-blue-600 text-white shadow-md z-50 rounded-4xl py-0.2">
             <div className="flex justify-center items-center p-4 w-full">
               <ul className="flex gap-6">
-                <li><a href="#acerca" className="hover:text-blue-200">Principal</a></li>
-                <li><a href="#acerca" className="hover:text-blue-200">Acerca de mí</a></li>
-                <li><a href="#ex" className="hover:text-blue-200">Ex. acadm</a></li>
-                <li><a href="#proyectos" className="hover:text-blue-200">Proyectos</a></li>
-                <li><a href="#testimonios" className="hover:text-blue-200">Testimonios</a></li>
-                <li><a href="#contactos" className="hover:text-blue-200">Contactos</a></li>
+                <li><a href="Acerca_de_mi" className="hover:text-blue-200">Acerca de mí</a></li>
+                <li><a href="Ex_academica" className="hover:text-blue-200">Ex. acadm</a></li>
+                <li><a href="Proyectos" className="hover:text-blue-200">Proyectos</a></li>
+                <li><a href="Testimonios" className="hover:text-blue-200">Testimonios</a></li>
+                <li><a href="Contactos" className="hover:text-blue-200">Contactos</a></li>
               </ul>
             </div>
           </nav>
@@ -70,10 +69,10 @@ export default function Home() {
             <a href="#" className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
               LinkedIn
             </a>
-            <a href="#" className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded shadow">
+            <a href="#" className="bg-blue-500 hover:bg-pink-600 text-white px-4 py-2 rounded shadow">
               Instagram
             </a>
-            <a href="#" className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded shadow">
+            <a href="#" className="bg-blue-500 hover:bg-gray-900 text-white px-4 py-2 rounded shadow">
               GitHub
             </a>
           </div>
@@ -112,9 +111,6 @@ export default function Home() {
                     />
                     <div className="flex-1">
                       <h4 className="text-lg font-bold text-blue-800 mb-2">Acerca de mi</h4>
-                      <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm">
-                        Menú
-                      </button>
                     </div>
                   </div>
 
@@ -175,15 +171,15 @@ export default function Home() {
                   <div className="space-y-3 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">Ingeniería en Sistemas</span>
+                      <span className="text-sm text-gray-700">Ingeniería de Software</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">Certificaciones Tech</span>
+                      <span className="text-sm text-gray-700">Certificaciones</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">Cursos Especializados</span>
+                      <span className="text-sm text-gray-700">Cursos</span>
                     </div>
                   </div>
 
@@ -204,7 +200,7 @@ export default function Home() {
                 onMouseEnter={() => setShowProjectsPreview(true)}
                 onMouseLeave={() => setShowProjectsPreview(false)}
               >
-                <div className="text-4xl mb-3">💡</div>
+                <div className="text-4xl mb-3 ">💡</div>
                 <a href="/Proyectos" className="font-semibold text-blue-800">Proyectos</a>
               </div>
 
@@ -232,14 +228,6 @@ export default function Home() {
                     <div className="bg-white p-3 rounded-lg shadow-sm">
                       <div className="text-lg mb-1">📱</div>
                       <p className="text-xs text-gray-600">Mobile</p>
-                    </div>
-                    <div className="bg-white p-3 rounded-lg shadow-sm">
-                      <div className="text-lg mb-1">🎨</div>
-                      <p className="text-xs text-gray-600">UI/UX</p>
-                    </div>
-                    <div className="bg-white p-3 rounded-lg shadow-sm">
-                      <div className="text-lg mb-1">⚡</div>
-                      <p className="text-xs text-gray-600">Performance</p>
                     </div>
                   </div>
 
@@ -286,9 +274,8 @@ export default function Home() {
                       <span className="text-xs text-gray-500">5.0</span>
                     </div>
                     <p className="text-sm text-gray-700 italic">
-                      "Excelente desarrollador, muy profesional y creativo en sus soluciones."
+                      "Excelente desarrollador, creativo"
                     </p>
-                    <p className="text-xs text-gray-500 mt-2">- Cliente Satisfecho</p>
                   </div>
 
                   <a
@@ -324,7 +311,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-orange-800">Contáctame</h4>
-                      <p className="text-sm text-gray-600">¡Hablemos de tu proyecto!</p>
+
                     </div>
                   </div>
 
@@ -333,20 +320,16 @@ export default function Home() {
                       <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-sm">📧</span>
                       </div>
-                      <span className="text-sm text-gray-700">diego@ejemplo.com</span>
+                      <span className="text-sm text-gray-700">diegoalejandromallama@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-sm">📱</span>
                       </div>
-                      <span className="text-sm text-gray-700">+1 (555) 123-4567</span>
+                      <span className="text-sm text-gray-700">3225436249</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm">💬</span>
-                      </div>
-                      <span className="text-sm text-gray-700">WhatsApp disponible</span>
-                    </div>
+      
+                    
                   </div>
 
                   <a

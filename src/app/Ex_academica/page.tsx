@@ -33,7 +33,7 @@ export default function ExperienciaAcademica() {
           : "bg-[#F9FAFB] text-gray-900"
       }`}
     >
-      {/* Contenedor de texto */}
+      {/* Título y descripción */}
       <div className="max-w-3xl text-center">
         <h1
           className={`text-4xl font-extrabold mb-6 ${
@@ -52,32 +52,27 @@ export default function ExperienciaAcademica() {
         </ul>
       </div>
 
-      {/* Carrusel de lenguajes */}
-      <div className="relative w-full overflow-hidden mt-10">
-        <div
-          className="flex animate-scroll gap-8"
-          style={{
-            animation: "scroll 20s linear infinite",
-          }}
-        >
-          {[...lenguajes, ...lenguajes].map((logo, i) => (
+      {/* Carrusel infinito con rotación */}
+      <div className="relative w-full overflow-hidden mt-12">
+        <div className="flex w-max animate-marquee gap-12">
+          {[...lenguajes, ...lenguajes, ...lenguajes].map((logo, i) => (
             <div
               key={i}
-              className={`min-w-[100px] flex-shrink-0 bg-white/70 dark:bg-gray-800/70 rounded-2xl shadow-md p-4 flex items-center justify-center transition-transform hover:scale-105`}
+              className="flex-shrink-0 flex items-center justify-center bg-white/80 dark:bg-gray-800/70 rounded-2xl shadow-md p-6"
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={60}
-                height={60}
-                className="object-contain"
+                width={90}
+                height={90}
+                className="object-contain animate-rotate"
               />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Botón volver */}
+      {/* Botón para volver */}
       <div className="mt-10">
         <Link href="/" passHref>
           <button
@@ -92,15 +87,32 @@ export default function ExperienciaAcademica() {
         </Link>
       </div>
 
-      {/* Animación personalizada */}
+      {/* Animaciones CSS */}
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes marquee {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-33.333%);
           }
+        }
+
+        @keyframes rotate {
+          from {
+            transform: rotateY(0deg);
+          }
+          to {
+            transform: rotateY(360deg);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+
+        .animate-rotate {
+          animation: rotate 6s linear infinite;
         }
       `}</style>
     </main>

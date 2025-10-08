@@ -49,3 +49,52 @@ body {
 .hover-lift:hover {
   transform: translateY(-5px);
 }
+
+/* Animación para las flechas (suben y bajan lentamente) */
+@keyframes float-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Clase Tailwind personalizada */
+.animate-float {
+  animation: float-arrow 2.5s ease-in-out infinite;
+}
+
+/* Flechas: movimiento vertical (suben y bajan) */
+@keyframes float-arrow {
+  0%, 100% { transform: translateY(0); }
+  50%     { transform: translateY(18px); }
+}
+.animate-float {
+  animation: float-arrow 2.4s ease-in-out infinite;
+}
+
+/* Logos / imágenes: pequeño balanceo y leve slide para dar vida */
+@keyframes float-image {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  50%      { transform: translateY(-10px) translateX(6px) scale(1.02); }
+}
+.animate-float-image {
+  animation: float-image 3s ease-in-out infinite;
+}
+
+/* Caja visual para los logos (se parece a tu diseño) */
+.logo-box {
+  background: rgba(59,130,246,0.08); /* azul muy suave */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.03);
+}
+
+/* (Opcional) utilidades pequeñas si prefieres clases en CSS en vez de style inline */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: .35s; }
+.delay-2 { animation-delay: .7s; }
+.delay-3 { animation-delay: 1.05s; }
+
