@@ -1,10 +1,14 @@
-'use client'
-import { useTheme } from '@/context/ThemeContext';
-import { getSiteData } from '@/lib/getSiteData';
-import CardBase from './CardBase';
+'use client';
+import CardBase from "./CardBase";
 
 export default function AboutCard() {
-  const { language } = useTheme();
-  const data = getSiteData(language).cards.find(c => c.key === 'about')!;
-  return <CardBase icon={data.icon} title={data.title} href={data.href} preview={data.preview} accent="blue" />;
+  return (
+    <CardBase
+      icon="👤"
+      title="Acerca de mí"
+      href="/acerca_de_mi"
+      preview="Conoce más sobre mi trayectoria, intereses y metas como desarrollador."
+      accent="blue"
+    />
+  );
 }

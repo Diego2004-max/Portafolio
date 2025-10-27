@@ -1,10 +1,14 @@
-'use client'
-import { useTheme } from '@/context/ThemeContext';
-import { getSiteData } from '@/lib/getSiteData';
-import CardBase from './CardBase';
+'use client';
+import CardBase from "./CardBase";
 
 export default function AcademicCard() {
-  const { language } = useTheme();
-  const data = getSiteData(language).cards.find(c => c.key === 'academic')!;
-  return <CardBase icon={data.icon} title={data.title} href={data.href} preview={data.preview} accent="blue" />;
+  return (
+    <CardBase
+      icon="🎓"
+      title="Experiencia Académica"
+      href="/ex_academica"
+      preview="Mira mis estudios, logros y certificaciones en el área tecnológica."
+      accent="blue"
+    />
+  );
 }

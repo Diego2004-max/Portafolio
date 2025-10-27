@@ -1,10 +1,14 @@
-'use client'
-import { useTheme } from '@/context/ThemeContext';
-import { getSiteData } from '@/lib/getSiteData';
-import CardBase from './CardBase';
+'use client';
+import CardBase from "./CardBase";
 
 export default function ProjectsCard() {
-  const { language } = useTheme();
-  const data = getSiteData(language).cards.find(c => c.key === 'projects')!;
-  return <CardBase icon={data.icon} title={data.title} href={data.href} preview={data.preview} accent="purple" />;
+  return (
+    <CardBase
+      icon="💡"
+      title="Proyectos"
+      href="/projects"
+      preview="Explora los proyectos en los que he trabajado, desde diseño hasta desarrollo."
+      accent="purple"
+    />
+  );
 }

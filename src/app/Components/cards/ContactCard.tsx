@@ -1,10 +1,14 @@
-'use client'
-import { useTheme } from '@/context/ThemeContext';
-import { getSiteData } from '@/lib/getSiteData';
-import CardBase from './CardBase';
+'use client';
+import CardBase from "./CardBase";
 
 export default function ContactCard() {
-  const { language } = useTheme();
-  const data = getSiteData(language).cards.find(c => c.key === 'contact')!;
-  return <CardBase icon={data.icon} title={data.title} href={data.href} preview={data.preview} accent="orange" />;
+  return (
+    <CardBase
+      icon="📞"
+      title="Contactos"
+      href="/contactos"
+      preview="Ponte en contacto conmigo a través de correo o redes sociales."
+      accent="orange"
+    />
+  );
 }
