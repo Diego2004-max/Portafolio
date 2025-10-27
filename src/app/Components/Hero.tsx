@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="text-center w-full">
       {/* 🌐 Navbar integrado */}
       <motion.div
-        className="w-full bg-blue-600/70 dark:bg-slate-800/70 rounded-2xl shadow-lg 
+        className="w-full bg-blue-600/80 dark:bg-slate-800/70 rounded-2xl shadow-lg 
                    px-4 sm:px-6 py-3 flex flex-col sm:flex-row justify-between items-center 
                    gap-3 sm:gap-0 backdrop-blur-md animate-fadeIn"
         initial={{ opacity: 0, y: -20 }}
@@ -23,10 +23,10 @@ export default function Hero() {
         <Navbar />
       </motion.div>
 
-      {/* 👤 Imagen */}
-      <div className="flex justify-center mt-8">
+      {/* 👤 Imagen - bajada y centrada */}
+      <div className="flex justify-center mt-12 sm:mt-14">
         <motion.div
-          className="rounded-full overflow-hidden border-4 border-blue-400 w-32 h-32 sm:w-36 sm:h-36 shadow-xl animate-float-image"
+          className="rounded-full overflow-hidden border-4 border-blue-400 w-36 h-36 sm:w-40 sm:h-40 shadow-xl animate-float-image"
           whileHover={{ scale: 1.05 }}
         >
           <Image
@@ -40,14 +40,14 @@ export default function Hero() {
       </div>
 
       {/* 🧍 Nombre */}
-      <div className="mt-6 bg-blue-200/70 dark:bg-blue-300/20 rounded-lg py-2 px-6 sm:px-10 inline-block animate-fadeIn">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800 dark:text-blue-300">
+      <div className="mt-6 bg-blue-100/80 rounded-lg py-2 px-6 sm:px-10 inline-block animate-fadeIn">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800">
           {t.hero.nameLine1} <br /> {t.hero.nameLine2}
         </h2>
       </div>
 
       {/* 📝 Descripción */}
-      <p className="mt-4 text-slate-700 dark:text-slate-300 max-w-xl sm:max-w-2xl mx-auto animate-fadeIn delay-1">
+      <p className="mt-4 text-slate-700 max-w-xl sm:max-w-2xl mx-auto animate-fadeIn delay-1">
         {t.hero.subtitle}
       </p>
 

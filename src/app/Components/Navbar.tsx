@@ -10,26 +10,17 @@ export default function Navbar() {
   const t = getSiteData(lang);
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[75%] bg-blue-600/90 backdrop-blur-lg text-white rounded-3xl shadow-xl px-6 py-3 flex items-center justify-between animate-fadeIn z-50">
-      {/* 🌐 Selector de idioma */}
-      <div className="animate-float">
-        <LanguageToggle />
-      </div>
-
-      {/* 🧭 Navegación */}
-      <ul className="hidden md:flex gap-6 text-sm font-medium tracking-wide">
-        <li><Link href="/" className="hover:text-blue-200 transition-colors">{t.nav.home}</Link></li>
-        <li><Link href="/acerca_de_mi" className="hover:text-blue-200 transition-colors">{t.nav.about}</Link></li>
-        <li><Link href="/ex_academica" className="hover:text-blue-200 transition-colors">{t.nav.academic}</Link></li>
-        <li><Link href="/projects" className="hover:text-blue-200 transition-colors">{t.nav.projects}</Link></li>
-        <li><Link href="/testimonial" className="hover:text-blue-200 transition-colors">{t.nav.testimonials}</Link></li>
-        <li><Link href="/contactos" className="hover:text-blue-200 transition-colors">{t.nav.contact}</Link></li>
+    <nav className="flex flex-wrap justify-between items-center w-full gap-3 sm:gap-6">
+      <LanguageToggle />
+      <ul className="flex gap-5 text-white text-sm sm:text-base font-medium">
+        <li><Link href="#">{t.nav.home}</Link></li>
+        <li><Link href="#">{t.nav.about}</Link></li>
+        <li><Link href="#">{t.nav.academic}</Link></li>
+        <li><Link href="#">{t.nav.projects}</Link></li>
+        <li><Link href="#">{t.nav.testimonials}</Link></li>
+        <li><Link href="#">{t.nav.contact}</Link></li>
       </ul>
-
-      {/* ☀️ Modo claro/oscuro */}
-      <div className="animate-float">
-        <ThemeToggle />
-      </div>
+      <ThemeToggle />
     </nav>
   );
 }
