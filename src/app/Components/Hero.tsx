@@ -1,53 +1,87 @@
 'use client';
-import { motion } from "framer-motion";
 import Image from "next/image";
+import Navbar from "./Navbar";
+import { motion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
+import { getSiteData } from "../../lib/getSiteData";
 
 export default function Hero() {
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="flex flex-col items-center text-center pt-16 pb-12 px-4"
-    >
-      <Image
-        src="/me.jpg"
-        alt="Foto de perfil"
-        width={128}
-        height={128}
-        className="rounded-full shadow-md"
-      />
+  const { lang } = useLanguage();
+  const t = getSiteData(lang);
 
+  return (
+    <section className="text-center w-full">
+      {/* 🌐 Navbar integrado */}
       <motion.div
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center bg-blue-200 dark:bg-blue-300/20 rounded-lg py-0.5 px-12 mb-2.5 mt-2.5"
+        className="w-full bg-blue-600/70 dark:bg-slate-800/70 rounded-2xl shadow-lg 
+                   px-4 sm:px-6 py-3 flex flex-col sm:flex-row justify-between items-center 
+                   gap-3 sm:gap-0 backdrop-blur-md animate-fadeIn"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl font-bold mt-6 text-blue-600 dark:text-blue-300">
-          Soy Diego Alejandro <br /> Mallama Yandún
-        </h2>
+        <Navbar />
       </motion.div>
 
-      <p className="mt-3 max-w-lg text-gray-700 dark:text-slate-300">
-        Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.
-      </p>
-
-      <div className="flex gap-4 mt-6">
-        <a href="#" className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded shadow">
-          Instagram
-        </a>
-        <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow">
-          LinkedIn
-        </a>
-        <a href="#" className="bg-gray-900 hover:bg-black text-white px-4 py-2 rounded shadow">
-          GitHub
-        </a>
+      {/* 👤 Imagen */}
+      <div className="flex justify-center mt-8">
+        <motion.div
+          className="rounded-full overflow-hidden border-4 border-blue-400 w-32 h-32 sm:w-36 sm:h-36 shadow-xl animate-float-image"
+          whileHover={{ scale: 1.05 }}
+        >
+          <Image
+            src="/me.jpg"
+            alt="Foto de perfil"
+            width={160}
+            height={160}
+            className="object-cover w-full h-full"
+          />
+        </motion.div>
       </div>
 
-      <button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded shadow">
-        Descargar CV ↓
-      </button>
-    </motion.section>
+      {/* 🧍 Nombre */}
+      <div className="mt-6 bg-blue-200/70 dark:bg-blue-300/20 rounded-lg py-2 px-6 sm:px-10 inline-block animate-fadeIn">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800 dark:text-blue-300">
+          {t.hero.nameLine1} <br /> {t.hero.nameLine2}
+        </h2>
+      </div>
+
+      {/* 📝 Descripción */}
+      <p className="mt-4 text-slate-700 dark:text-slate-300 max-w-xl sm:max-w-2xl mx-auto animate-fadeIn delay-1">
+        {t.hero.subtitle}
+      </p>
+
+      {/* 🔗 Redes sociales */}
+      <motion.div
+        className="flex flex-wrap justify-center gap-3 mt-6 animate-fadeIn delay-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
+        {t.socials.map((s: any) => (
+          <a
+            key={s.label}
+            href={s.href}
+            className={`px-4 py-2 rounded shadow text-white text-sm font-semibold transition-transform hover:scale-105 ${
+              s.label === "Instagram"
+                ? "bg-pink-500 hover:bg-pink-600"
+                : s.label === "LinkedIn"
+                ? "bg-blue-500 hover:bg-blue-600"
+                : "bg-gray-900 hover:bg-black"
+            }`}
+          >
+            {s.label}
+          </a>
+        ))}
+      </motion.div>
+
+      {/* 📄 Botón CV */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded shadow-md hover-lift animate-fadeIn delay-3"
+      >
+        {t.hero.cvLabel}
+      </motion.button>
+    </section>
   );
 }

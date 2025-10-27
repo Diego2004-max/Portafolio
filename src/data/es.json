@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Principal",
+    "about": "Acerca de mí",
+    "academic": "Ex. académ.",
+    "projects": "Proyectos",
+    "testimonials": "Testimonios",
+    "contact": "Contactos"
+  },
+  "hero": {
+    "nameLine1": "Soy Diego Alejandro",
+    "nameLine2": "Mallama Yandún",
+    "subtitle": "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
+    "cvLabel": "Descargar CV ↓"
+  },
+  "cards": [
+    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "Acerca de mí", "preview": "Conoce mi experiencia y habilidades." },
+    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Experiencia Académica", "preview": "Educación, cursos y certificaciones." },
+    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Proyectos", "preview": "Aplicaciones web, móviles y más." },
+    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonios", "preview": "Lo que dicen de mí." },
+    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contactos", "preview": "Hablemos por email o teléfono." }
+  ],
+  "socials": [
+  { "label": "LinkedIn", "href": "#" },
+  { "label": "Instagram", "href": "#" },
+  { "label": "GitHub", "href": "#" }
+]
+
+}

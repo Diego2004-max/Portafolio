@@ -1,54 +1,52 @@
 'use client';
 import { useState } from "react";
-import { useLanguage } from "../context/LanguageContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function LanguageToggle() {
-  const { lang, toggleLang } = useLanguage();
+  const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
 
   const languages = [
-    { code: "es", label: "Español 🇪🇸" },
-    { code: "en", label: "English 🇺🇸" },
+    { code: "es", label: "🇪🇸 Español" },
+    { code: "en", label: "🇺🇸 English" },
   ];
+
+  const current = languages.find((l) => l.code === lang);
 
   return (
     <div className="relative">
+      {/* Botón principal */}
       <button
         onClick={() => setOpen(!open)}
-        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
+        className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold text-sm shadow-md transition-all duration-200 hover-lift"
       >
-        {lang === "es" ? "🇪🇸 ES" : "🇺🇸 EN"}
+        {current?.label.split(" ")[0]} {lang.toUpperCase()}
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.ul
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute mt-2 right-0 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg shadow-md z-50 w-36"
-          >
-            {languages.map((l) => (
-              <li key={l.code}>
-                <button
-                  onClick={() => {
-                    if (l.code !== lang) toggleLang();
-                    setOpen(false);
-                  }}
-                  className={`block w-full text-left px-4 py-2 rounded-md hover:bg-blue-100 dark:hover:bg-slate-700 ${
-                    lang === l.code
-                      ? "font-semibold text-blue-600 dark:text-blue-300"
-                      : "text-slate-700 dark:text-slate-200"
-                  }`}
-                >
-                  {l.label}
-                </button>
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      {/* Dropdown */}
+      {open && (
+        <div
+          onMouseLeave={() => setOpen(false)}
+          className="absolute mt-2 w-32 bg-white dark:bg-slate-800 border border-blue-200 dark:border-slate-700 rounded-xl shadow-lg overflow-hidden animate-fadeIn"
+        >
+          {languages.map((l) => (
+            <button
+              key={l.code}
+              onClick={() => {
+                setLang(l.code as "es" | "en");
+                setOpen(false);
+              }}
+              className={`block w-full px-4 py-2 text-left text-sm ${
+                lang === l.code
+                  ? "bg-blue-100 dark:bg-slate-700 font-semibold"
+                  : "hover:bg-blue-50 dark:hover:bg-slate-700"
+              }`}
+            >
+              {l.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

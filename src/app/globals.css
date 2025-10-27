@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --blue-soft: #dbeafe;   /* Fondo card */
+  --blue-light: #bfdbfe;  /* Hover */
+  --blue-text: #1e3a8a;   /* Texto */
+  --blue-border: #93c5fd; /* Bordes */
+  --card-shadow: 0 6px 20px rgba(30, 64, 175, 0.15);
 }
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +28,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Animaciones personalizadas */
+/* ============ ANIMACIONES ============ */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -38,10 +42,19 @@ body {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Efectos de hover mejorados */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hover: iluminación sutil */
 .hover-glow:hover {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
@@ -50,51 +63,17 @@ body {
   transform: translateY(-5px);
 }
 
-/* Animación para las flechas (suben y bajan lentamente) */
-@keyframes float-arrow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(15px);
-  }
-}
-
-/* Clase Tailwind personalizada */
-.animate-float {
-  animation: float-arrow 2.5s ease-in-out infinite;
-}
-
-/* Flechas: movimiento vertical (suben y bajan) */
-@keyframes float-arrow {
-  0%, 100% { transform: translateY(0); }
-  50%     { transform: translateY(18px); }
-}
-.animate-float {
-  animation: float-arrow 2.4s ease-in-out infinite;
-}
-
-/* Logos / imágenes: pequeño balanceo y leve slide para dar vida */
+/* Animación de logos */
 @keyframes float-image {
   0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-  50%      { transform: translateY(-10px) translateX(6px) scale(1.02); }
+  50% { transform: translateY(-10px) translateX(6px) scale(1.03); }
 }
+
 .animate-float-image {
   animation: float-image 3s ease-in-out infinite;
 }
 
-/* Caja visual para los logos (se parece a tu diseño) */
-.logo-box {
-  background: rgba(59,130,246,0.08); /* azul muy suave */
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  display: inline-block;
-  box-shadow: 0 8px 24px rgba(15,23,42,0.03);
+/* Animación general para entrada de página */
+.page-enter {
+  animation: fadeIn 0.8s ease-out forwards;
 }
-
-/* (Opcional) utilidades pequeñas si prefieres clases en CSS en vez de style inline */
-.delay-0 { animation-delay: 0s; }
-.delay-1 { animation-delay: .35s; }
-.delay-2 { animation-delay: .7s; }
-.delay-3 { animation-delay: 1.05s; }
-

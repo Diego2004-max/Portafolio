@@ -1,26 +1,26 @@
 'use client';
+import { motion } from "framer-motion";
 import AboutCard from "./cards/AboutCard";
 import AcademicCard from "./cards/AcademicCard";
 import ProjectsCard from "./cards/ProjectsCard";
-import TestimonialsCard from "./cards/TestimonialsCard";
+import TestimonialCard from "./cards/TestimonialsCard";
 import ContactCard from "./cards/ContactCard";
-import { motion } from "framer-motion";
 
 export default function CardsSection() {
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="relative max-w-6xl mx-auto pb-16 px-6"
+      id="cards"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mt-14 px-4"
     >
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6 p-6">
-        <AboutCard />
-        <AcademicCard />
-        <ProjectsCard />
-        <TestimonialsCard />
-        <ContactCard />
-      </div>
+      <AboutCard />
+      <AcademicCard />
+      <ProjectsCard />
+      <TestimonialCard />
+      <ContactCard />
     </motion.section>
   );
 }
