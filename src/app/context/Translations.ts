@@ -1,21 +1,24 @@
 export const translations = {
-    es: {
-      homeTitle: "Página Principal",
-      welcome: "Bienvenido a mi portafolio",
-      description: "Explora mis proyectos, habilidades y experiencia.",
-      back: "Regresar a la página principal",
+  es: {
+    nav: { about: 'Acerca de mí', academic: 'Ex. acadm', projects: 'Proyectos', testimonials: 'Testimonios', contact: 'Contactos' },
+    hero: { nameLine1: 'Soy Diego Alejandro', nameLine2: 'Mallama Yandun', subtitle: 'Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.', downloadCv: 'Descargar CV ↓' },
+    labels: { education: 'Educación & Formación', innovation: 'Innovación & Creatividad', whatTheySay: 'Lo que dicen sobre mí' },
+    academic: { softwareEng: 'Ingeniería de Software', certs: 'Certificaciones', courses: 'Cursos' },
+    cards: {
+      about: 'Acerca de mí', academic: 'Ex. acadm', projects: 'Proyectos', testimonials: 'Testimonios', contact: 'Contactos',
+      preview: { about: 'Conoce mi experiencia y habilidades.' }
     },
-    en: {
-      homeTitle: "Home Page",
-      welcome: "Welcome to my portfolio",
-      description: "Explore my projects, skills, and experience.",
-      back: "Go back to the main page",
+    actions: { go: 'Ir', details: 'Ver Detalles →', explore: 'Explorar Proyectos →', more: 'Ver Más Testimonios →', contact: 'Enviar Mensaje →' }
+  },
+  en: {
+    nav: { about: 'About', academic: 'Academic', projects: 'Projects', testimonials: 'Testimonials', contact: 'Contact' },
+    hero: { nameLine1: "I'm Diego Alejandro", nameLine2: 'Mallama Yandun', subtitle: 'Developer in training passionate about technology, design, and innovation.', downloadCv: 'Download CV ↓' },
+    labels: { education: 'Education & Training', innovation: 'Innovation & Creativity', whatTheySay: 'What people say' },
+    academic: { softwareEng: 'Software Engineering', certs: 'Certifications', courses: 'Courses' },
+    cards: {
+      about: 'About', academic: 'Academic', projects: 'Projects', testimonials: 'Testimonials', contact: 'Contact',
+      preview: { about: 'Learn about my experience and skills.' }
     },
-    fr: {
-      homeTitle: "Page d'accueil",
-      welcome: "Bienvenue dans mon portfolio",
-      description: "Découvrez mes projets, mes compétences et mon expérience.",
-      back: "Retour à la page principale",
-    },
-  };
-  
+    actions: { go: 'Open', details: 'See Details →', explore: 'Explore Projects →', more: 'More Testimonials →', contact: 'Send Message →' }
+  }
+} as const;
