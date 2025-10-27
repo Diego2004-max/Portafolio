@@ -1,15 +1,17 @@
 'use client';
-
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-type Props = {
+type Accent = "blue" | "purple" | "green" | "orange";
+
+interface CardBaseProps {
   icon: string;
   title: string;
   href: string;
   preview: string;
-  accent?: "blue" | "purple" | "green" | "orange";
-};
+  accent?: Accent;
+}
 
 export default function CardBase({
   icon,
@@ -17,38 +19,44 @@ export default function CardBase({
   href,
   preview,
   accent = "blue",
-}: Props) {
+}: CardBaseProps) {
   const [open, setOpen] = useState(false);
 
-  const borderAccent = {
+  const borderAccent: Record<Accent, string> = {
     blue: "border-blue-200",
     purple: "border-purple-200",
     green: "border-green-200",
     orange: "border-orange-200",
-  }[accent];
+  };
 
   return (
-    <div className="relative">
-      {/* Card principal */}
-      <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative"
+    >
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        className="bg-white dark:bg-slate-800 shadow-md p-6 rounded-lg text-center cursor-pointer transition-all"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        onClick={() => setOpen((o) => !o)} // para móviles
-        onBlur={() => setOpen(false)}
-        tabIndex={0}
-        className="bg-white dark:bg-slate-800 shadow-md p-6 rounded-lg text-center cursor-pointer transform transition duration-300 hover:scale-105 hover:bg-blue-50/70 dark:hover:bg-slate-700 focus-visible:ring"
-        aria-expanded={open}
       >
         <div className="text-4xl mb-3">{icon}</div>
-        <h3 className="font-semibold text-blue-800 dark:text-blue-300">
+        <Link
+          href={href}
+          className="font-semibold text-blue-800 dark:text-blue-300"
+        >
           {title}
-        </h3>
-      </div>
+        </Link>
+      </motion.div>
 
-      {/* Vista previa flotante */}
       {open && (
-        <div
-          className={`absolute top-0 left-0 bg-white dark:bg-slate-900 shadow-2xl p-6 rounded-lg w-80 -translate-y-2 z-20 border ${borderAccent} transition-all`}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className={`absolute top-0 left-0 bg-white dark:bg-slate-900 shadow-2xl p-6 rounded-lg w-80 z-20 border ${borderAccent[accent]}`}
         >
           <h4 className="text-lg font-bold text-blue-800 dark:text-blue-300 mb-2">
             {title}
@@ -58,12 +66,12 @@ export default function CardBase({
           </p>
           <Link
             href={href}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm block text-center focus-visible:ring"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm block text-center"
           >
             Ir
           </Link>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
