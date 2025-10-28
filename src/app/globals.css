@@ -3,14 +3,22 @@
 
 :root {
   --bg-main: #e8f0ff;
-  --bg-card: #f8fbff;
-  --blue-text: #1e3a8a;
+  --bg-card: #f9fbff;
+  --bg-hover: #e0edff;
+  --text-primary: #1e3a8a;
+  --text-secondary: #475569;
+  --border-color: #c7d2fe;
+  --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 .dark {
   --bg-main: #0f172a;
   --bg-card: #1e293b;
-  --blue-text: #bfdbfe;
+  --bg-hover: #334155;
+  --text-primary: #dbeafe;
+  --text-secondary: #cbd5e1;
+  --border-color: #475569;
+  --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
 @theme inline {
@@ -26,15 +34,15 @@
 }
 
 body {
-  background: var(--bg-main);
-  color: var(--blue-text);
-  transition: background 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ============ ANIMACIONES ============ */
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -73,4 +81,19 @@ body {
 /* Animación general para entrada de página */
 .page-enter {
   animation: fadeIn 0.8s ease-out forwards;
+}
+
+/*cards generales*/
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  background-color: var(--bg-hover);
 }

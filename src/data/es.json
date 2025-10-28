@@ -1,4 +1,10 @@
 {
+  "hero": {
+    "nameLine1": "Soy Diego Alejandro",
+    "nameLine2": "Mallama Yandún",
+    "subtitle": "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
+    "cvLabel": "Descargar CV ↓"
+  },
   "nav": {
     "home": "Principal",
     "about": "Acerca de mí",
@@ -6,13 +12,8 @@
     "projects": "Proyectos",
     "testimonials": "Testimonios",
     "contact": "Contactos"
-  },
-  "hero": {
-    "nameLine1": "Soy Diego Alejandro",
-    "nameLine2": "Mallama Yandún",
-    "subtitle": "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
-    "cvLabel": "Descargar CV ↓"
-  },
+  }
+,
   "cards": [
     { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "Acerca de mí", "preview": "Conoce mi experiencia y habilidades." },
     { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Experiencia Académica", "preview": "Educación, cursos y certificaciones." },

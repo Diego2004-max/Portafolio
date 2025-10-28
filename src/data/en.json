@@ -1,4 +1,10 @@
 {
+  "hero": {
+    "nameLine1": "I'm Diego Alejandro",
+    "nameLine2": "Mallama Yandún",
+    "subtitle": "Developer in training passionate about technology, design, and innovation.",
+    "cvLabel": "Download CV ↓"
+  },
   "nav": {
     "home": "Home",
     "about": "About me",
@@ -6,12 +12,6 @@
     "projects": "Projects",
     "testimonials": "Testimonials",
     "contact": "Contact"
-  },
-  "hero": {
-    "nameLine1": "I’m Diego Alejandro",
-    "nameLine2": "Mallama Yandún",
-    "subtitle": "Developer in training passionate about technology, design, and innovation.",
-    "cvLabel": "Download CV ↓"
   },
   "cards": [
     { "key": "about", "icon": "👤", "href": "/About", "title": "About", "preview": "Learn about my experience and skills." },
