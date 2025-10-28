@@ -1,11 +1,11 @@
 'use client';
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-type ThemeMode = "light" | "dark" | "system";
+type ThemeMode = "light" | "dark";
 
 interface ThemeContextType {
   themeMode: ThemeMode;
-  setThemeMode: (mode: ThemeMode) => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -14,23 +14,20 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeMode, setThemeMode] = useState<ThemeMode>("light");
 
   useEffect(() => {
-    const root = document.documentElement;
+    const saved = localStorage.getItem("theme") as ThemeMode | null;
+    if (saved) setThemeMode(saved);
+    document.documentElement.classList.toggle("dark", saved === "dark");
+  }, []);
 
-    if (themeMode === "dark") {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else if (themeMode === "light") {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      prefersDark ? root.classList.add("dark") : root.classList.remove("dark");
-      localStorage.removeItem("theme");
-    }
-  }, [themeMode]);
+  const toggleTheme = () => {
+    const newTheme = themeMode === "light" ? "dark" : "light";
+    setThemeMode(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    localStorage.setItem("theme", newTheme);
+  };
 
   return (
-    <ThemeContext.Provider value={{ themeMode, setThemeMode }}>
+    <ThemeContext.Provider value={{ themeMode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

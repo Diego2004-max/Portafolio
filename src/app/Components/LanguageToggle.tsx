@@ -10,12 +10,10 @@ export default function LanguageToggle() {
     { code: "es", label: "Español" },
     { code: "en", label: "English" },
   ];
-
   const current = langs.find((l) => l.code === lang);
 
   return (
     <div className="relative">
-      {/* Botón principal */}
       <button
         onClick={() => setOpen(!open)}
         className="px-4 py-2 bg-blue-200 text-blue-900 font-semibold rounded-lg 
@@ -24,7 +22,6 @@ export default function LanguageToggle() {
         {current?.code.toUpperCase()}
       </button>
 
-      {/* Menú desplegable */}
       {open && (
         <div
           className="absolute mt-2 w-32 bg-white border border-blue-200 rounded-xl shadow-md z-20 overflow-hidden"

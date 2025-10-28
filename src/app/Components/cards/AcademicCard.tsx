@@ -6,8 +6,8 @@ export default function AcademicCard() {
     <CardBase
       icon="🎓"
       title="Experiencia Académica"
-      href="/ex_academica"
-      preview="Mira mis estudios, logros y certificaciones en el área tecnológica."
+      href="#academic"
+      preview="Mi formación profesional y logros académicos."
       accent="blue"
     />
   );

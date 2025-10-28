@@ -8,7 +8,7 @@ type Lang = "es" | "en";
 interface LanguageContextType {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: any; // traducciones dinámicas
+  t: any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -17,7 +17,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>("es");
   const [t, setT] = useState<any>(es);
 
-  // Cargar idioma guardado o por defecto
   useEffect(() => {
     const savedLang = localStorage.getItem("lang") as Lang | null;
     if (savedLang) {
@@ -26,7 +25,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  // Cambiar idioma y guardar preferencia
   const setLang = (newLang: Lang) => {
     setLangState(newLang);
     setT(newLang === "es" ? es : en);
