@@ -1,5 +1,4 @@
-'use client';
-import CardBase from "./CardBase";
+import CardBase from './CardBase';
 
 export default function AboutCard() {
   return (
@@ -7,7 +6,7 @@ export default function AboutCard() {
       icon="👤"
       title="Acerca de mí"
       href="/about"
-      preview="Conoce más sobre mi trayectoria y valores."
+      preview="Soy un desarrollador en formación, curioso y enfocado en la innovación."
       accent="purple"
     />
   );

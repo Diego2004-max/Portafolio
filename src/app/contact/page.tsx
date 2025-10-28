@@ -1,68 +1,71 @@
 'use client';
-import { motion } from "framer-motion";
-import { useTheme } from "../../context/ThemeContext";
 
-export default function ContactPage() {
-  const { themeMode } = useTheme();
+import Link from 'next/link';
+import Image from 'next/image';
 
-  const contactos = [
-    {
-      label: "Email",
-      value: "diegoalejandromallama@gmail.com",
-      icon: "📧",
-    },
-    {
-      label: "Teléfono",
-      value: "+57 123 456 7890",
-      icon: "📱",
-    },
-    {
-      label: "LinkedIn",
-      value: "linkedin.com/in/diegomallama",
-      icon: "💼",
-    },
-    {
-      label: "GitHub",
-      value: "github.com/Diego2004mx",
-      icon: "💻",
-    },
-  ];
-
+export default function Contactos() {
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className={`min-h-screen flex flex-col items-center px-8 py-20 ${
-        themeMode === "dark"
-          ? "bg-gradient-to-b from-gray-900 to-black text-gray-100"
-          : "bg-gradient-to-b from-blue-50 to-white text-gray-900"
-      }`}
-    >
-      <h1 className="text-4xl font-bold mb-8 text-blue-600 dark:text-blue-300">
-        Contacto
-      </h1>
+    <section className="min-h-screen flex flex-col items-center justify-center bg-[#e7edf7] p-10 rounded-3xl shadow-md">
+      <h1 className="text-4xl font-semibold mb-10 text-black">Contactos</h1>
 
-      <div className="max-w-lg w-full space-y-5">
-        {contactos.map((c, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.03 }}
-            className={`flex items-center justify-between p-4 rounded-xl shadow-md border ${
-              themeMode === "dark"
-                ? "bg-slate-800 border-slate-700"
-                : "bg-white border-blue-100"
-            }`}
-          >
-            <span className="text-2xl">{c.icon}</span>
-            <div className="text-right">
-              <p className="font-semibold">{c.label}</p>
-              <p className="text-sm opacity-80">{c.value}</p>
-            </div>
-          </motion.div>
-        ))}
+      {/* Contenedor principal */}
+      <div className="w-full max-w-lg bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-md space-y-4">
+
+        {/* Email */}
+        <div className="flex items-center justify-between border-b border-gray-400 pb-2 hover:bg-blue-50 transition-colors rounded-md px-2">
+          <p className="text-lg text-gray-800">
+            <strong>Email:</strong> diegoalejandromallama@gmail.com
+          </p>
+          <Image src="/email.png" alt="Gmail" width={30} height={30} />
+        </div>
+
+        {/* Teléfono */}
+        <div className="flex items-center justify-between border-b border-gray-400 pb-2 hover:bg-blue-50 transition-colors rounded-md px-2">
+          <p className="text-lg text-gray-800">
+            <strong>Teléfono:</strong> 3225436249
+          </p>
+          <Image src="/telefono.png" alt="Teléfono" width={28} height={28} />
+        </div>
+
+        {/* LinkedIn */}
+        <div className="flex items-center justify-between border-b border-gray-400 pb-2 hover:bg-blue-50 transition-colors rounded-md px-2">
+          <p className="text-lg text-gray-800">
+            <strong>LinkedIn:</strong>{' '}
+            <a
+              href="https://www.linkedin.com/in/diego-alejandro-mallama-yandun"
+              target="_blank"
+              className="text-black-600 hover:underline"
+            >
+              Diego Alejandro Mallama Yandun
+            </a>
+          </p>
+          <Image src="/linkedin.png" alt="LinkedIn" width={28} height={28} />
+        </div>
+
+        {/* GitHub */}
+        <div className="flex items-center justify-between border-b border-gray-400 pb-2 hover:bg-blue-50 transition-colors rounded-md px-2">
+          <p className="text-lg text-gray-800">
+            <strong>GitHub:</strong>{' '}
+            <a
+              href="https://github.com/Diego2004-max"
+              target="_blank"
+              className="text-black-600 hover:underline"
+            >
+              Diego2004-max
+            </a>
+          </p>
+          <Image src="/git.png" alt="GitHub" width={28} height={28} />
+        </div>
       </div>
-    </motion.section>
+
+      {/* Botón Home */}
+      <div className="mt-10">
+        <Link href="/" passHref>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:shadow-blue-400/40 transition-all">
+            Home
+          </button>
+        </Link>
+      </div>
+    </section>
   );
 }
