@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="flex justify-center gap-5 mb-8 text-xl">
           <a href="https://linkedin.com" target="_blank" className="text-blue-600 hover:scale-110 transition-transform"><FaLinkedin /></a>
           <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:scale-110 transition-transform"><FaInstagram /></a>
-          <a href="https://github.com" target="_blank" className="text-gray-900 dark:text-white hover:scale-110 transition-transform"><FaGithub /></a>
+          <a href="https://github.com/Diego2004-max?tab=repositories" target="_blank" className="text-gray-900 dark:text-white hover:scale-110 transition-transform"><FaGithub /></a>
         </div>
 
         {/* Botón de CV */}
