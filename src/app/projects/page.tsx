@@ -97,18 +97,18 @@ export default function Proyecto() {
             transform: translateY(0);
           }
           50% {
-            transform: translateY(-6px);
+            transform: translateY(-15px);
           }
         }
         .animate-float {
-          animation: float 2s ease-in-out infinite;
+          animation: float 3s ease-in-out infinite;
         }
         @keyframes floatImage {
           0% {
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(-4px);
+            transform: translateY(-18px);
           }
           100% {
             transform: translateY(0px);
