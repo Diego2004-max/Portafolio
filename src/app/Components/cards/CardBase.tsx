@@ -11,13 +11,14 @@ interface CardBaseProps {
 
 export default function CardBase({ icon, title, href, preview }: CardBaseProps) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05, y: -6 }}
-      transition={{ type: 'spring', stiffness: 250, damping: 15 }}
-      className="w-52 h-64 bg-gradient-to-b from-blue-100 to-blue-200 border border-blue-300 rounded-3xl 
-                 p-5 shadow-md flex flex-col justify-between items-center text-center 
-                 hover:shadow-2xl transition-all overflow-hidden relative group"
-    >
+      <motion.div
+        whileHover={{ scale: 1.05, y: -6 }}
+        transition={{ type: 'spring', stiffness: 250, damping: 15 }}
+        className="w-44 h-56 bg-gradient-to-b from-blue-100 to-blue-200 border border-blue-300 rounded-2xl 
+                  p-4 shadow-md flex flex-col justify-between items-center text-center 
+                  hover:shadow-2xl transition-all overflow-hidden relative group"
+      >
+
       {/* Icono */}
       <motion.div
         className="text-4xl mb-2"

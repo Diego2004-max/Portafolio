@@ -16,18 +16,23 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center text-center gap-8 animate-fadeIn w-full"
+      className="flex flex-col items-center text-center gap-10 animate-fadeIn w-full"
     >
-      {/* 🔹 Caja principal */}
-      <div className="bg-[var(--bg-card)] shadow-xl rounded-3xl py-10 px-8 w-full max-w-5xl border border-blue-100 relative">
+      {/* 🔹 Caja principal más grande */}
+      <div className="bg-[var(--bg-card)] shadow-2xl rounded-3xl py-12 px-10 w-full max-w-6xl border border-blue-200 relative">
         
-        {/* 🔹 Fila superior: idioma, tema, navbar */}
-        <div className="flex justify-between items-center mb-4 w-full">
-          <div className="flex gap-4 items-center">
+        {/* 🔹 Fila superior: idioma — menú — tema */}
+        <div className="flex justify-between items-center mb-6 w-full">
+          <div className="flex items-center gap-4">
             <LanguageToggle />
+          </div>
+
+          {/* Menú centrado */}
+          <Navbar />
+
+          <div className="flex items-center gap-4">
             <ThemeToggle />
           </div>
-          <Navbar />
         </div>
 
         {/* Foto */}
@@ -39,39 +44,39 @@ export default function Hero() {
           <Image
             src="/me.jpg"
             alt="Foto de perfil"
-            width={140}
-            height={140}
+            width={160}
+            height={160}
             className="rounded-full border-4 border-blue-300 shadow-md"
           />
         </motion.div>
 
         {/* Nombre */}
-        <h1 className="text-2xl font-bold text-blue-800 bg-blue-100/70 inline-block px-6 py-2 rounded-lg mb-2 dark:text-blue-200 dark:bg-slate-700/50">
+        <h1 className="text-3xl font-bold text-blue-800 bg-blue-100/70 inline-block px-8 py-3 rounded-lg mb-3 dark:text-blue-200 dark:bg-slate-700/50">
           {t.hero.nameLine1} <br /> {t.hero.nameLine2}
         </h1>
 
         {/* Subtítulo */}
-        <p className="text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-5">
+        <p className="text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-6 text-sm md:text-base">
           {t.hero.subtitle}
         </p>
 
         {/* Redes */}
-        <div className="flex justify-center gap-4 mb-6 text-xl">
+        <div className="flex justify-center gap-5 mb-8 text-xl">
           <a href="https://linkedin.com" target="_blank" className="text-blue-600 hover:scale-110 transition-transform"><FaLinkedin /></a>
-          <a href="https://www.instagram.com/alejandro16_04/" target="_blank" className="text-pink-500 hover:scale-110 transition-transform"><FaInstagram /></a>
+          <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:scale-110 transition-transform"><FaInstagram /></a>
           <a href="https://github.com" target="_blank" className="text-gray-900 dark:text-white hover:scale-110 transition-transform"><FaGithub /></a>
         </div>
 
         {/* Botón de CV */}
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium transition-all"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium"
         >
           {t.hero.cvLabel}
         </motion.button>
 
-        {/* 🔹 Cards al final */}
-        <div className="mt-10">
+        {/* 🔹 Cards (más pequeñas y dentro de la caja principal) */}
+        <div className="mt-10 px-4">
           <CardsSection />
         </div>
       </div>
