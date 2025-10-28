@@ -12,20 +12,15 @@ export default function CardsSection() {
       id="cards"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full max-w-6xl mx-auto mt-14 px-4 sm:px-8"
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-14 px-4"
     >
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 
-                   place-items-center"
-      >
-        <AboutCard />
-        <AcademicCard />
-        <ProjectsCard />
-        <TestimonialsCard />
-        <ContactCard />
-      </div>
+      <AboutCard />
+      <AcademicCard />
+      <ProjectsCard />
+      <TestimonialsCard />
+      <ContactCard />
     </motion.section>
   );
 }

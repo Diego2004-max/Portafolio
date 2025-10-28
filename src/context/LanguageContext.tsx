@@ -1,45 +1,25 @@
 'use client';
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import es from "../data/es.json";
-import en from "../data/en.json";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 type Lang = "es" | "en";
 
 interface LanguageContextType {
   lang: Lang;
-  setLang: (l: Lang) => void;
-  t: any;
+  setLang: (lang: Lang) => void;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType>({
+  lang: "es",
+  setLang: () => {},
+});
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLangState] = useState<Lang>("es");
-  const [t, setT] = useState<any>(es);
-
-  useEffect(() => {
-    const savedLang = localStorage.getItem("lang") as Lang | null;
-    if (savedLang) {
-      setLangState(savedLang);
-      setT(savedLang === "es" ? es : en);
-    }
-  }, []);
-
-  const setLang = (newLang: Lang) => {
-    setLangState(newLang);
-    setT(newLang === "es" ? es : en);
-    localStorage.setItem("lang", newLang);
-  };
-
+  const [lang, setLang] = useState<Lang>("es");
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
-export const useLanguage = () => {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
-  return ctx;
-};
+export const useLanguage = () => useContext(LanguageContext);

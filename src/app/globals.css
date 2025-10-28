@@ -2,15 +2,13 @@
 
 
 :root {
-  --bg-main: #e8f0ff;
-  --bg-card: #f9fbff;
-  --bg-hover: #e0edff;
-  --text-primary: #1e3a8a;
-  --text-secondary: #475569;
-  --border-color: #c7d2fe;
-  --shadow-color: rgba(0, 0, 0, 0.08);
+  --bg-page: #eaf1ff;          /* azul pastel suave */
+  --bg-card: #f6f9ff;          /* fondo ligeramente más claro */
+  --text-primary: #1e3a8a;     /* azul fuerte */
+  --text-secondary: #475569;   /* gris-azulado */
+  --border-color: #c7d2fe;     /* azul claro */
+  --shadow-light: 8px 8px 16px #dbeafe, -8px -8px 16px #ffffff; /* efecto neumórfico */
 }
-
 .dark {
   --bg-main: #0b1220;
   --bg-card: #1b2433;
@@ -19,6 +17,23 @@
   --text-secondary: #b6c3e0;
   --border-color: #2c3e55;
   --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 🌙 Modo oscuro */
+[data-theme="dark"] {
+  --bg-page: #0f172a;          /* azul marino profundo */
+  --bg-card: #1e293b;          /* gris azulado oscuro */
+  --text-primary: #e2e8f0;     /* texto claro */
+  --text-secondary: #cbd5e1;   /* gris claro */
+  --border-color: #334155;     /* borde oscuro */
+  --shadow-light: 6px 6px 12px #0a0f1a, -6px -6px 12px #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 @theme inline {
@@ -34,11 +49,11 @@
 }
 
 body {
-  background-color: var(--bg-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-page);
   color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: all 0.4s ease;
 }
-
 /* ============ ANIMACIONES ============ */
 
 @keyframes fadeIn {
@@ -85,17 +100,15 @@ body {
 
 /*cards generales*/
 .card {
-  background-color: var(--bg-card);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px var(--shadow-color);
-  transition: all 0.35s ease;
+  box-shadow: var(--shadow-light);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
 }
+
 .card:hover {
-  transform: translateY(-6px) scale(1.04);
-  background-color: var(--bg-hover);
-  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.25);
+  transform: translateY(-4px);
 }
 
 .cards-grid {
@@ -104,4 +117,36 @@ body {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+button {
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* 🌐 Scrollbar minimalista */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
 }

@@ -1,28 +1,29 @@
 {
-  "hero": {
-    "nameLine1": "I'm Diego Alejandro",
-    "nameLine2": "Mallama Yandún",
-    "subtitle": "Developer in training passionate about technology, design, and innovation.",
-    "cvLabel": "Download CV ↓"
-  },
   "nav": {
     "home": "Home",
-    "about": "About me",
-    "academic": "Academic",
+    "about": "About Me",
+    "academic": "Education",
     "projects": "Projects",
     "testimonials": "Testimonials",
     "contact": "Contact"
   },
+  "hero": {
+    "nameLine1": "I’m Diego Alejandro",
+    "nameLine2": "Mallama Yandun",
+    "subtitle": "Developer in training passionate about technology, design, and innovation.",
+    "cvLabel": "Download CV ↓"
+  },
   "cards": [
-    { "key": "about", "icon": "👤", "href": "/About", "title": "About", "preview": "Learn about my experience and skills." },
-    { "key": "academic", "icon": "🎓", "href": "/Academic", "title": "Academic", "preview": "Education, courses and certifications." },
-    { "key": "projects", "icon": "💡", "href": "/Projects", "title": "Projects", "preview": "Web, mobile and more." },
-    { "key": "testimonials", "icon": "💬", "href": "/Testimonials", "title": "Testimonials", "preview": "What people say about me." },
-    { "key": "contact", "icon": "📞", "href": "/Contact", "title": "Contact", "preview": "Let’s talk via email or phone." }
+    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "About Me", "preview": "Learn more about my background, skills, and passions." },
+    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Education", "preview": "Formal studies, courses, and certifications." },
+    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Projects", "preview": "Web, mobile, and more: my featured work." },
+    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonials", "preview": "What people say about my work." },
+    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contact", "preview": "Let's get in touch via email or social networks." }
   ],
   "socials": [
-  { "label": "LinkedIn", "href": "#" },
-  { "label": "Instagram", "href": "#" },
-  { "label": "GitHub", "href": "#" }
-  ]
+    { "label": "LinkedIn", "href": "https://linkedin.com" },
+    { "label": "Instagram", "href": "https://instagram.com" },
+    { "label": "GitHub", "href": "https://github.com" }
+  ],
+  "footerCarousel": ["/carousel/1.jpg"]
 }

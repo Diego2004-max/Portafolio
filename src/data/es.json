@@ -1,30 +1,29 @@
 {
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de mí",
+    "academic": "Formación",
+    "projects": "Proyectos",
+    "testimonials": "Testimonios",
+    "contact": "Contacto"
+  },
   "hero": {
     "nameLine1": "Soy Diego Alejandro",
-    "nameLine2": "Mallama Yandún",
+    "nameLine2": "Mallama Yandun",
     "subtitle": "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
     "cvLabel": "Descargar CV ↓"
   },
-  "nav": {
-    "home": "Principal",
-    "about": "Acerca de mí",
-    "academic": "Ex. académ.",
-    "projects": "Proyectos",
-    "testimonials": "Testimonios",
-    "contact": "Contactos"
-  }
-,
   "cards": [
-    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "Acerca de mí", "preview": "Conoce mi experiencia y habilidades." },
-    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Experiencia Académica", "preview": "Educación, cursos y certificaciones." },
-    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Proyectos", "preview": "Aplicaciones web, móviles y más." },
-    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonios", "preview": "Lo que dicen de mí." },
-    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contactos", "preview": "Hablemos por email o teléfono." }
+    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "Acerca de mí", "preview": "Conoce más sobre mi trayectoria, habilidades y pasiones." },
+    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Formación", "preview": "Educación, cursos y certificaciones relevantes." },
+    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Proyectos", "preview": "Web, móvil y más: mis trabajos más destacados." },
+    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonios", "preview": "Opiniones de personas con las que he trabajado." },
+    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contacto", "preview": "Hablemos por email o redes sociales." }
   ],
   "socials": [
-  { "label": "LinkedIn", "href": "#" },
-  { "label": "Instagram", "href": "#" },
-  { "label": "GitHub", "href": "#" }
-]
-
+    { "label": "LinkedIn", "href": "https://linkedin.com" },
+    { "label": "Instagram", "href": "https://instagram.com" },
+    { "label": "GitHub", "href": "https://github.com" }
+  ],
+  "footerCarousel": ["/carousel/1.jpg"]
 }

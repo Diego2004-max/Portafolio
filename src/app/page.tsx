@@ -9,9 +9,9 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen flex flex-col items-center justify-start py-10 bg-gradient-to-b from-blue-100 to-blue-100 text-slate-900"
+      className="min-h-screen flex flex-col items-center justify-start py-10 bg-[var(--bg-page)] text-[var(--text-primary)]"
     >
-      <div className="w-full max-w-6xl bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl p-6 sm:p-10 transition-all duration-700">
+      <div className="w-full max-w-6xl bg-[var(--bg-card)] rounded-3xl shadow-2xl p-6 sm:p-10 border border-[var(--border-color)]">
         <Hero />
         <CardsSection />
       </div>
