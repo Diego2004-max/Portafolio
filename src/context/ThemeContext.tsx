@@ -1,24 +1,31 @@
 'use client';
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-type ThemeMode = 'light' | 'dark' | 'system';
+type ThemeMode = "light" | "dark" | "system";
 
-type ThemeContextType = {
+interface ThemeContextType {
   themeMode: ThemeMode;
   setThemeMode: (mode: ThemeMode) => void;
-};
+}
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeMode, setThemeMode] = useState<ThemeMode>('system');
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [themeMode, setThemeMode] = useState<ThemeMode>("light");
 
   useEffect(() => {
-    if (themeMode === 'system') {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', prefersDark);
+    const root = document.documentElement;
+
+    if (themeMode === "dark") {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else if (themeMode === "light") {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     } else {
-      document.documentElement.classList.toggle('dark', themeMode === 'dark');
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      prefersDark ? root.classList.add("dark") : root.classList.remove("dark");
+      localStorage.removeItem("theme");
     }
   }, [themeMode]);
 
@@ -27,10 +34,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
-}
+};
 
-export function useTheme() {
+export const useTheme = () => {
   const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
+  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
   return ctx;
-}
+};

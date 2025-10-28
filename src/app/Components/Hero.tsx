@@ -1,6 +1,8 @@
 'use client';
 import Image from "next/image";
 import Navbar from "./Navbar";
+import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { getSiteData } from "../../lib/getSiteData";
@@ -10,78 +12,61 @@ export default function Hero() {
   const t = getSiteData(lang);
 
   return (
-    <section className="text-center w-full">
-      {/* 🌐 Navbar integrado */}
-      <motion.div
-        className="w-full bg-blue-600/80 dark:bg-slate-800/70 rounded-2xl shadow-lg 
-                   px-4 sm:px-6 py-3 flex flex-col sm:flex-row justify-between items-center 
-                   gap-3 sm:gap-0 backdrop-blur-md animate-fadeIn"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Navbar />
-      </motion.div>
+    <section id="hero" className="flex flex-col items-center text-center gap-5 animate-fadeIn">
+      
+      {/* Barra de idioma y tema fuera del nav */}
+      <div className="flex justify-between w-full max-w-4xl px-4 mb-2">
+        <LanguageToggle />
+        <ThemeToggle />
+      </div>
 
-      {/* 👤 Imagen - bajada y centrada */}
-      <div className="flex justify-center mt-12 sm:mt-14">
+      <Navbar />
+
+      <div className="bg-[var(--bg-card)] shadow-xl rounded-3xl py-10 px-8 mt-10 w-full max-w-3xl border border-blue-100">
         <motion.div
-          className="rounded-full overflow-hidden border-4 border-blue-400 w-36 h-36 sm:w-40 sm:h-40 shadow-xl animate-float-image"
-          whileHover={{ scale: 1.05 }}
+          className="flex justify-center mb-6"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
         >
           <Image
             src="/me.jpg"
-            alt="Foto de perfil"
-            width={160}
-            height={160}
-            className="object-cover w-full h-full"
+            alt="Foto"
+            width={140}
+            height={140}
+            className="rounded-full border-4 border-blue-300 shadow-md"
           />
         </motion.div>
-      </div>
 
-      {/* 🧍 Nombre */}
-      <div className="mt-6 bg-blue-100/80 rounded-lg py-2 px-6 sm:px-10 inline-block animate-fadeIn">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800">
+        <h1 className="text-2xl font-bold text-blue-800 bg-blue-100/70 inline-block px-6 py-2 rounded-lg mb-2">
           {t.hero.nameLine1} <br /> {t.hero.nameLine2}
-        </h2>
+        </h1>
+        <p className="text-slate-700 max-w-xl mx-auto mb-5">{t.hero.subtitle}</p>
+
+        <div className="flex justify-center gap-3 mb-6">
+          {t.socials.map((s: any) => (
+            <a
+              key={s.label}
+              href={s.href}
+              className={`px-4 py-2 rounded shadow text-white text-sm font-semibold hover:scale-105 transition-transform ${
+                s.label === "Instagram"
+                  ? "bg-pink-500 hover:bg-pink-600"
+                  : s.label === "LinkedIn"
+                  ? "bg-blue-500 hover:bg-blue-600"
+                  : "bg-gray-900 hover:bg-black"
+              }`}
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium"
+        >
+          {t.hero.cvLabel}
+        </motion.button>
       </div>
-
-      {/* 📝 Descripción */}
-      <p className="mt-4 text-slate-700 max-w-xl sm:max-w-2xl mx-auto animate-fadeIn delay-1">
-        {t.hero.subtitle}
-      </p>
-
-      {/* 🔗 Redes sociales */}
-      <motion.div
-        className="flex flex-wrap justify-center gap-3 mt-6 animate-fadeIn delay-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
-        {t.socials.map((s: any) => (
-          <a
-            key={s.label}
-            href={s.href}
-            className={`px-4 py-2 rounded shadow text-white text-sm font-semibold transition-transform hover:scale-105 ${
-              s.label === "Instagram"
-                ? "bg-pink-500 hover:bg-pink-600"
-                : s.label === "LinkedIn"
-                ? "bg-blue-500 hover:bg-blue-600"
-                : "bg-gray-900 hover:bg-black"
-            }`}
-          >
-            {s.label}
-          </a>
-        ))}
-      </motion.div>
-
-      {/* 📄 Botón CV */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded shadow-md hover-lift animate-fadeIn delay-3"
-      >
-        {t.hero.cvLabel}
-      </motion.button>
     </section>
   );
 }
