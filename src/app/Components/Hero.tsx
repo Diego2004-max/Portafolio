@@ -7,21 +7,28 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { getSiteData } from "../../lib/getSiteData";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import CardsSection from "./CardsSection";
 
 export default function Hero() {
   const { lang } = useLanguage();
   const t = getSiteData(lang);
 
   return (
-    <section id="hero" className="flex flex-col items-center text-center gap-5 animate-fadeIn">
-      <div className="bg-[var(--bg-card)] shadow-xl rounded-3xl py-10 px-8 w-full max-w-3xl border border-blue-100">
-        {/* Barra superior */}
-        <div className="flex justify-between mb-4">
-          <LanguageToggle />
-          <ThemeToggle />
+    <section
+      id="hero"
+      className="flex flex-col items-center text-center gap-8 animate-fadeIn w-full"
+    >
+      {/* 🔹 Caja principal */}
+      <div className="bg-[var(--bg-card)] shadow-xl rounded-3xl py-10 px-8 w-full max-w-5xl border border-blue-100 relative">
+        
+        {/* 🔹 Fila superior: idioma, tema, navbar */}
+        <div className="flex justify-between items-center mb-4 w-full">
+          <div className="flex gap-4 items-center">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+          <Navbar />
         </div>
-
-        <Navbar />
 
         {/* Foto */}
         <motion.div
@@ -38,24 +45,35 @@ export default function Hero() {
           />
         </motion.div>
 
+        {/* Nombre */}
         <h1 className="text-2xl font-bold text-blue-800 bg-blue-100/70 inline-block px-6 py-2 rounded-lg mb-2 dark:text-blue-200 dark:bg-slate-700/50">
           {t.hero.nameLine1} <br /> {t.hero.nameLine2}
         </h1>
 
-        <p className="text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-5">{t.hero.subtitle}</p>
+        {/* Subtítulo */}
+        <p className="text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-5">
+          {t.hero.subtitle}
+        </p>
 
+        {/* Redes */}
         <div className="flex justify-center gap-4 mb-6 text-xl">
-          <a href="https://linkedin.com" target="_blank" className="text-blue-600 hover:scale-110"><FaLinkedin /></a>
-          <a href="https://instagram.com" target="_blank" className="text-pink-500 hover:scale-110"><FaInstagram /></a>
-          <a href="https://github.com" target="_blank" className="text-gray-900 dark:text-white hover:scale-110"><FaGithub /></a>
+          <a href="https://linkedin.com" target="_blank" className="text-blue-600 hover:scale-110 transition-transform"><FaLinkedin /></a>
+          <a href="https://www.instagram.com/alejandro16_04/" target="_blank" className="text-pink-500 hover:scale-110 transition-transform"><FaInstagram /></a>
+          <a href="https://github.com" target="_blank" className="text-gray-900 dark:text-white hover:scale-110 transition-transform"><FaGithub /></a>
         </div>
 
+        {/* Botón de CV */}
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium transition-all"
         >
           {t.hero.cvLabel}
         </motion.button>
+
+        {/* 🔹 Cards al final */}
+        <div className="mt-10">
+          <CardsSection />
+        </div>
       </div>
     </section>
   );

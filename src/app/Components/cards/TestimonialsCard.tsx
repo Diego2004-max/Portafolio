@@ -7,7 +7,6 @@ export default function TestimonialsCard() {
       title="Testimonios"
       href="/testimonials"
       preview="Opiniones y experiencias compartidas por colegas y mentores."
-      accent="pink"
     />
   );
 }

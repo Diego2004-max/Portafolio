@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import AboutCard from './cards/AboutCard';
 import AcademicCard from './cards/AcademicCard';
 import ProjectsCard from './cards/ProjectsCard';
@@ -7,18 +7,35 @@ import TestimonialsCard from './cards/TestimonialsCard';
 import ContactCard from './cards/ContactCard';
 
 export default function CardsSection() {
+  const container: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const card: Variants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 justify-items-center"
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="flex flex-wrap justify-center gap-4 mt-8"
     >
-      <AboutCard />
-      <AcademicCard />
-      <ProjectsCard />
-      <TestimonialsCard />
-      <ContactCard />
-    </motion.section>
+      <motion.div variants={card}><AboutCard /></motion.div>
+      <motion.div variants={card}><AcademicCard /></motion.div>
+      <motion.div variants={card}><ProjectsCard /></motion.div>
+      <motion.div variants={card}><TestimonialsCard /></motion.div>
+      <motion.div variants={card}><ContactCard /></motion.div>
+    </motion.div>
   );
 }

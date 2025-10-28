@@ -7,7 +7,6 @@ export default function ProjectsCard() {
       title="Proyectos"
       href="/projects"
       preview="Algunos de los proyectos web y de software que he desarrollado."
-      accent="yellow"
     />
   );
 }

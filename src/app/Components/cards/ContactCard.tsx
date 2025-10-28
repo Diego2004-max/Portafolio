@@ -7,7 +7,6 @@ export default function ContactCard() {
       title="Contacto"
       href="/contact"
       preview="¿Quieres colaborar conmigo? Ponte en contacto fácilmente."
-      accent="orange"
     />
   );
 }

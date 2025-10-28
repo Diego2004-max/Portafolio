@@ -7,7 +7,6 @@ export default function AboutCard() {
       title="Acerca de mí"
       href="/about"
       preview="Soy un desarrollador en formación, curioso y enfocado en la innovación."
-      accent="purple"
     />
   );
 }
