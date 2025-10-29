@@ -15,9 +15,9 @@ export default function CardBase({ icon, title, href, preview }: CardBaseProps) 
       whileHover={{ scale: 1.04, y: -4 }}
       transition={{ type: 'spring', stiffness: 200, damping: 16 }}
       className="w-[200px] h-[180px]
-                 bg-gradient-to-b from-[#f7f9fc] to-[#e7edf7]
-                 dark:from-[#1e2533] dark:to-[#2a3245]
-                 border border-slate-200 dark:border-slate-700
+                 bg-gradient-to-b from-[#f8fafc] to-[#e7edf7]
+                 dark:from-[#1e2533] dark:to-[#273247]
+                 border border-slate-300 dark:border-slate-700
                  rounded-2xl shadow-md hover:shadow-blue-300/30
                  flex flex-col justify-center items-center text-center
                  p-4 transition-all duration-300"
