@@ -7,23 +7,51 @@
     "testimonials": "Testimonials",
     "contact": "Contact"
   },
-  "hero": {
-    "nameLine1": "I’m Diego Alejandro",
-    "nameLine2": "Mallama Yandun",
-    "subtitle": "Developer in training passionate about technology, design, and innovation.",
-    "cvLabel": "Download CV ↓"
+  "about": {
+    "intro": "I'm 21 years old, I live an active life and do many activities. Some of them are:",
+    "activities": [
+      { "titulo": "Sports", "descripcion": "Basketball, soccer, volleyball.", "imagen": "/Deportes.jpg" },
+      { "titulo": "Trips", "descripcion": "Family outings every weekend.", "imagen": "/Paseos.jpg" },
+      { "titulo": "Walks", "descripcion": "Going on motorcycle rides with my partner.", "imagen": "/Salidas.jpg" },
+      { "titulo": "Friends", "descripcion": "Going out and having fun with friends.", "imagen": "/Encuentros.jpg" },
+      { "titulo": "Study", "descripcion": "In my free time, I study and learn about software development.", "imagen": "/Estudiar.jpg" }
+    ]
   },
-  "cards": [
-    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "About Me", "preview": "Learn more about my background, skills, and passions." },
-    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Education", "preview": "Formal studies, courses, and certifications." },
-    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Projects", "preview": "Web, mobile, and more: my featured work." },
-    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonials", "preview": "What people say about my work." },
-    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contact", "preview": "Let's get in touch via email or social networks." }
-  ],
-  "socials": [
-    { "label": "LinkedIn", "href": "https://linkedin.com" },
-    { "label": "Instagram", "href": "https://instagram.com" },
-    { "label": "GitHub", "href": "https://github.com" }
-  ],
-  "footerCarousel": ["/carousel/1.jpg"]
+  "academic": {
+    "studies": [
+      "Elementary school",
+      "High school",
+      "English certificate",
+      "Speed reading certificate (AMI)",
+      "Software engineering (5th semester)",
+      "Systems technology course",
+      "Frontend & backend development courses"
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Personal Portfolio",
+        "desc": "Developed with Next.js and Tailwind, includes dark mode and dynamic translation.",
+        "img": "/proyecto1.jpg"
+      },
+      {
+        "title": "School Management System",
+        "desc": "CRUD app with authentication and responsive dashboard.",
+        "img": "/proyecto2.jpg"
+      },
+      {
+        "title": "Task Manager App",
+        "desc": "Mobile app built with React Native and Firebase.",
+        "img": "/proyecto3.jpg"
+      }
+    ]
+  },
+  "testimonials": {
+    "list": [
+      { "nombre": "Andrew", "texto": "Great teamwork and very professional result." },
+      { "nombre": "Charles", "texto": "I learned a lot about React and Tailwind, it was fun." },
+      { "nombre": "Julian", "texto": "Amazing experience, the outcome exceeded expectations." }
+    ]
+  }
 }

@@ -7,23 +7,51 @@
     "testimonials": "Testimonios",
     "contact": "Contacto"
   },
-  "hero": {
-    "nameLine1": "Soy Diego Alejandro",
-    "nameLine2": "Mallama Yandun",
-    "subtitle": "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
-    "cvLabel": "Descargar CV ↓"
+  "about": {
+    "intro": "Tengo 21 años, mi vida es activa y hago muchas actividades. Algunas son:",
+    "activities": [
+      { "titulo": "Deportes", "descripcion": "Basketball, fútbol, volleyball.", "imagen": "/Deportes.jpg" },
+      { "titulo": "Paseos", "descripcion": "Familiares cada fin de semana.", "imagen": "/Paseos.jpg" },
+      { "titulo": "Salidas", "descripcion": "Con mi pareja salimos en la moto a conocer pueblos.", "imagen": "/Salidas.jpg" },
+      { "titulo": "Encuentros", "descripcion": "Salidas con amigos.", "imagen": "/Encuentros.jpg" },
+      { "titulo": "Estudiar", "descripcion": "En mi tiempo libre estudio y veo videos de desarrollo.", "imagen": "/Estudiar.jpg" }
+    ]
   },
-  "cards": [
-    { "key": "about", "icon": "👤", "href": "/Acerca_de_mi", "title": "Acerca de mí", "preview": "Conoce más sobre mi trayectoria, habilidades y pasiones." },
-    { "key": "academic", "icon": "🎓", "href": "/Ex_academica", "title": "Formación", "preview": "Educación, cursos y certificaciones relevantes." },
-    { "key": "projects", "icon": "💡", "href": "/Proyectos", "title": "Proyectos", "preview": "Web, móvil y más: mis trabajos más destacados." },
-    { "key": "testimonials", "icon": "💬", "href": "/Testimonios", "title": "Testimonios", "preview": "Opiniones de personas con las que he trabajado." },
-    { "key": "contact", "icon": "📞", "href": "/Contactos", "title": "Contacto", "preview": "Hablemos por email o redes sociales." }
-  ],
-  "socials": [
-    { "label": "LinkedIn", "href": "https://linkedin.com" },
-    { "label": "Instagram", "href": "https://instagram.com" },
-    { "label": "GitHub", "href": "https://github.com" }
-  ],
-  "footerCarousel": ["/carousel/1.jpg"]
+  "academic": {
+    "studies": [
+      "Primaria",
+      "Secundaria",
+      "Certificado de inglés",
+      "Certificado de lectura rápida (AMI)",
+      "Ingeniería de software (5to semestre)",
+      "Cursando tecnólogo en sistemas",
+      "Cursos de backend y frontend"
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Portafolio Personal",
+        "desc": "Desarrollado con Next.js y Tailwind, integra modo oscuro y traducción dinámica.",
+        "img": "/proyecto1.jpg"
+      },
+      {
+        "title": "Sistema de Gestión Escolar",
+        "desc": "Aplicación CRUD con autenticación y dashboard responsivo.",
+        "img": "/proyecto2.jpg"
+      },
+      {
+        "title": "App de Tareas",
+        "desc": "Aplicación móvil para gestionar tareas con React Native y Firebase.",
+        "img": "/proyecto3.jpg"
+      }
+    ]
+  },
+  "testimonials": {
+    "list": [
+      { "nombre": "Andrés", "texto": "El trabajo en equipo fue excelente y la página quedó muy profesional." },
+      { "nombre": "Carlos", "texto": "Aprendí mucho sobre React y Tailwind, un proyecto divertido y útil." },
+      { "nombre": "Julián", "texto": "Increíble experiencia, los resultados superaron las expectativas." }
+    ]
+  }
 }
