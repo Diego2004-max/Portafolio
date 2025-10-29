@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 type ThemeMode = "light" | "dark" | "system";
@@ -16,16 +16,6 @@ const ThemeContext = createContext<ThemeContextType>({
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeMode, setThemeMode] = useState<ThemeMode>("system");
 
-  useEffect(() => {
-    const stored = localStorage.getItem("themeMode") as ThemeMode | null;
-    if (stored) {
-      setThemeMode(stored);
-      applyTheme(stored);
-    } else {
-      applyTheme("system");
-    }
-  }, []);
-
   const applyTheme = (mode: ThemeMode) => {
     let finalMode = mode;
     if (mode === "system") {
@@ -37,6 +27,16 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.classList.add(finalMode);
     localStorage.setItem("themeMode", mode);
   };
+
+  useEffect(() => {
+    const stored = localStorage.getItem("themeMode") as ThemeMode | null;
+    if (stored) {
+      setThemeMode(stored);
+      applyTheme(stored);
+    } else {
+      applyTheme("system");
+    }
+  }, []);
 
   useEffect(() => {
     applyTheme(themeMode);

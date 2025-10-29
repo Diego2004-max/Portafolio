@@ -1,31 +1,22 @@
 @import "tailwindcss";
 
-
+/* 🌈 Colores claros por defecto */
 :root {
-  --bg-page: #eaf1ff;          /* azul pastel suave */
-  --bg-card: #f6f9ff;          /* fondo ligeramente más claro */
-  --text-primary: #1e3a8a;     /* azul fuerte */
-  --text-secondary: #475569;   /* gris-azulado */
-  --border-color: #c7d2fe;     /* azul claro */
-  --shadow-light: 8px 8px 16px #dbeafe, -8px -8px 16px #ffffff; /* efecto neumórfico */
-}
-.dark {
-  --bg-main: #0b1220;
-  --bg-card: #1b2433;
-  --bg-hover: #273347;
-  --text-primary: #dce7ff;
-  --text-secondary: #b6c3e0;
-  --border-color: #2c3e55;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --bg-page: #eaf1ff;
+  --bg-card: #f6f9ff;
+  --text-primary: #1e3a8a;
+  --text-secondary: #475569;
+  --border-color: #c7d2fe;
+  --shadow-light: 8px 8px 16px #dbeafe, -8px -8px 16px #ffffff;
 }
 
 /* 🌙 Modo oscuro */
-[data-theme="dark"] {
-  --bg-page: #0f172a;          /* azul marino profundo */
-  --bg-card: #1e293b;          /* gris azulado oscuro */
-  --text-primary: #e2e8f0;     /* texto claro */
-  --text-secondary: #cbd5e1;   /* gris claro */
-  --border-color: #334155;     /* borde oscuro */
+.dark {
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
   --shadow-light: 6px 6px 12px #0a0f1a, -6px -6px 12px #1e293b;
 }
 
@@ -36,117 +27,35 @@ html {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg-page);
   color: var(--text-primary);
   transition: all 0.4s ease;
 }
-/* ============ ANIMACIONES ============ */
 
+/* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.4s ease-in-out forwards;
-}
+.animate-fadeIn { animation: fadeIn 0.5s ease-in-out forwards; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+.animate-float { animation: float 3s ease-in-out infinite; }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
+/* Hover efectos */
+.hover-glow:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+.hover-lift:hover { transform: translateY(-5px); }
 
-/* Hover: iluminación sutil */
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
+/* ===== Scrollbar minimalista ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #818cf8; }
 
-.hover-lift:hover {
-  transform: translateY(-5px);
-}
-
-/* Animación de logos */
-@keyframes float-image {
-  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-  50% { transform: translateY(-10px) translateX(6px) scale(1.03); }
-}
-
-.animate-float-image {
-  animation: float-image 3s ease-in-out infinite;
-}
-
-/* Animación general para entrada de página */
-.page-enter {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-/*cards generales*/
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-light);
-  border-radius: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.cards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
-}
-
-button {
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  filter: brightness(1.1);
-}
-
-/* 🌐 Scrollbar minimalista */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-page);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #a5b4fc;
-  border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #818cf8;
-}
+/* Responsivo */
+* { transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; }

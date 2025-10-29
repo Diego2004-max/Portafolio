@@ -11,7 +11,7 @@ export default function CardsSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.12 },
     },
   };
 
@@ -29,7 +29,7 @@ export default function CardsSection() {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="flex flex-wrap justify-center gap-4 mt-8"
+      className="flex flex-wrap justify-center gap-5 sm:gap-6 mt-8"
     >
       <motion.div variants={card}><AboutCard /></motion.div>
       <motion.div variants={card}><AcademicCard /></motion.div>
