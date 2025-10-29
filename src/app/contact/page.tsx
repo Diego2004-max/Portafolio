@@ -9,7 +9,9 @@ export default function Contactos() {
   const t = getSiteData(language);
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[var(--bg-page)] p-10 text-[var(--text-primary)] transition-all">
+    <section
+      id="contact" 
+      className="min-h-screen flex items-center justify-center bg-[var(--bg-page)] p-10 text-[var(--text-primary)] transition-all">
       <section className="bg-[var(--bg-card)] rounded-3xl shadow-xl border border-[var(--border-color)] w-full max-w-3xl p-10 flex flex-col items-center text-center animate-fadeIn">
         <h1 className="text-4xl font-bold mb-10">
           {t?.nav?.contact ?? "Contacto"}
@@ -63,6 +65,6 @@ export default function Contactos() {
           </Link>
         </div>
       </section>
-    </main>
+    </section>
   );
 }

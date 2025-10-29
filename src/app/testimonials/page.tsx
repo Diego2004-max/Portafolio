@@ -26,7 +26,9 @@ export default function TestimonialsPage() {
     ];
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[var(--bg-page)] p-10 text-[var(--text-primary)]">
+    <section
+        id="testimonials"
+         className="min-h-screen flex items-center justify-center bg-[var(--bg-page)] p-10 text-[var(--text-primary)]">
       <section className="bg-[var(--bg-card)] rounded-3xl shadow-xl border border-[var(--border-color)] w-full max-w-6xl p-12 flex flex-col items-center text-center">
         <h1 className="text-4xl font-bold mb-10 text-blue-900">
           {t?.nav?.testimonials ?? "Testimonios"}
@@ -68,6 +70,6 @@ export default function TestimonialsPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </section>
   );
 }

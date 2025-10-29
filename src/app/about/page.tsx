@@ -18,7 +18,9 @@ export default function AboutPage() {
     actividades.find((a) => a.titulo === hovered)?.imagen ?? "/me.jpg";
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-8 bg-[var(--bg-page)] text-[var(--text-primary)] transition-all">
+    <section
+          id="about"
+          className="min-h-screen flex items-center justify-center p-8 bg-[var(--bg-page)] text-[var(--text-primary)] transition-all">
       <div className="bg-[var(--bg-card)] rounded-3xl shadow-2xl w-full max-w-7xl flex flex-col md:flex-row items-center justify-between p-10 border border-[var(--border-color)] gap-12">
         
         {/* 🟦 Texto principal */}
@@ -75,6 +77,6 @@ export default function AboutPage() {
           </AnimatePresence>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

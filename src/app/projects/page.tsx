@@ -38,7 +38,8 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center p-10 text-[var(--text-primary)]">
+    <section id="projects" 
+          className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center p-10 text-[var(--text-primary)]">
       <section className="bg-[var(--bg-card)] rounded-3xl shadow-xl border border-[var(--border-color)] w-full max-w-6xl p-12 text-center">
         {/* Encabezado */}
         <header className="mb-10">
@@ -136,6 +137,6 @@ export default function ProjectsPage() {
           animation: floatImage 3.5s ease-in-out infinite;
         }
       `}</style>
-    </main>
+    </section>
   );
 }

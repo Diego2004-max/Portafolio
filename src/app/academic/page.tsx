@@ -30,7 +30,9 @@ export default function AcademicPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center p-10">
+    <section
+      id="academic"
+       className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center p-10">
       {/* Caja principal */}
       <div className="bg-[var(--bg-card)] rounded-3xl shadow-xl w-full max-w-6xl flex flex-col items-center text-center p-14 border border-[var(--border-color)] space-y-10">
         {/* Título */}
@@ -90,6 +92,6 @@ export default function AcademicPage() {
           animation: marquee 25s linear infinite;
         }
       `}</style>
-    </main>
+    </section>
   );
 }
