@@ -1,111 +1,113 @@
 'use client';
-
 import Image from "next/image";
 import Navbar from "./Navbar";
+import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { getSiteData } from "../../lib/getSiteData";
-import CardsSection from "./CardsSection";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import CardsSection from "./CardsSection";
 
 export default function Hero() {
-  const { language } = useLanguage(); // idioma global
-  const t = getSiteData(language); //  traduccion del JSON
+  // ✅ aseguramos compatibilidad entre { lang } y { language }
+  const { lang, language } = useLanguage() as any;
+  const t = getSiteData(lang || language || "es");
+
+  // ✅ fallback para evitar errores de undefined sin cambiar nada visual
+  const hero = t?.hero ?? {
+    nameLine1: "",
+    nameLine2: "",
+    subtitle: "",
+    cvLabel: "",
+  };
 
   return (
     <section
       id="hero"
-      className="flex flex-col items-center text-center gap-6 animate-fadeIn transition-colors duration-500"
+      className="flex flex-col items-center text-center gap-10 animate-fadeIn w-full"
     >
-      <div
-        className="bg-[var(--bg-card)] shadow-xl rounded-3xl py-10 px-8 w-full max-w-3xl
-                   border border-blue-100 dark:border-slate-700 transition-all duration-500"
-      >
-        {/* Barra superior con modo oscuro */}
-        <div className="flex justify-end mb-4">
-          <ThemeToggle />
+      {/* 🔹 Caja principal más grande */}
+      <div className="bg-[var(--bg-card)] shadow-2xl rounded-3xl py-12 px-10 w-full max-w-6xl border border-blue-200 relative">
+        
+        {/* 🔹 Fila superior: idioma — menú — tema */}
+        <div className="flex justify-between items-center mb-6 w-full">
+          <div className="flex items-center gap-4">
+            <LanguageToggle />
+          </div>
+
+          {/* Menú centrado */}
+          <Navbar />
+
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* Navbar */}
-        <Navbar />
-
-        {/* Foto de perfil */}
+        {/* Foto */}
         <motion.div
           className="flex justify-center my-6"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
           <Image
             src="/me.jpg"
             alt="Foto de perfil"
-            width={150}
-            height={150}
-            className="rounded-full border-4 border-blue-300 dark:border-blue-500 shadow-md"
+            width={160}
+            height={160}
+            className="rounded-full border-4 border-blue-300 shadow-md"
           />
         </motion.div>
 
         {/* Nombre */}
-        <h1
-          className="text-3xl md:text-4xl font-bold text-blue-800 bg-blue-100/70 inline-block 
-                     px-6 py-2 rounded-lg mb-3 dark:text-blue-200 dark:bg-slate-700/50"
-        >
-          {t.hero?.nameLine1 ?? "Nombre"}
-          <br />
-          {t.hero?.nameLine2 ?? "Apellido"}
+        <h1 className="text-3xl font-bold text-blue-800 bg-blue-100/70 inline-block px-8 py-3 rounded-lg mb-3 dark:text-blue-200 dark:bg-slate-700/50">
+          {hero.nameLine1 || t?.hero?.nameLine1} <br />{" "}
+          {hero.nameLine2 || t?.hero?.nameLine2}
         </h1>
 
-        {/*  Subtítulo */}
-        <p className="text-base md:text-lg text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-5">
-          {t.hero?.subtitle ?? "Desarrollador web y apasionado por la tecnología."}
+        {/* Subtítulo */}
+        <p className="text-slate-700 dark:text-slate-300 max-w-xl mx-auto mb-6 text-sm md:text-base">
+          {hero.subtitle || t?.hero?.subtitle}
         </p>
 
-        {/*  Redes sociales */}
-        <div className="flex justify-center gap-6 mb-6 text-2xl">
-          {t.socials?.[0]?.href && (
-            <a
-              href={t.socials[0].href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:scale-110 transition-transform"
-            >
-              <FaLinkedin />
-            </a>
-          )}
-          {t.socials?.[1]?.href && (
-            <a
-              href={t.socials[1].href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 hover:scale-110 transition-transform"
-            >
-              <FaInstagram />
-            </a>
-          )}
-          {t.socials?.[2]?.href && (
-            <a
-              href={t.socials[2].href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 dark:text-gray-100 hover:scale-110 transition-transform"
-            >
-              <FaGithub />
-            </a>
-          )}
+        {/* Redes */}
+        <div className="flex justify-center gap-5 mb-8 text-xl">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:scale-110 transition-transform"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-500 hover:scale-110 transition-transform"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-900 dark:text-white hover:scale-110 transition-transform"
+          >
+            <FaGithub />
+          </a>
         </div>
 
-        {/*  Botón de CV */}
+        {/* Botón de CV */}
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full 
-                     shadow-sm font-semibold transition-all"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-sm font-medium"
         >
-          {t.hero?.cvLabel ?? "Descargar CV"}
+          {hero.cvLabel || t?.hero?.cvLabel}
         </motion.button>
 
-        {/*  Sección de tarjetas */}
-        <div className="w-full mt-8">
+        {/* 🔹 Cards (más pequeñas y dentro de la caja principal) */}
+        <div className="mt-10 px-4">
           <CardsSection />
         </div>
       </div>

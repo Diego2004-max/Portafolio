@@ -1,7 +1,6 @@
 'use client';
-
-import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "../../context/LanguageContext";
 import { getSiteData } from "../../lib/getSiteData";
 
@@ -12,7 +11,9 @@ export default function Contactos() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-[var(--bg-page)] p-10 text-[var(--text-primary)] transition-all">
       <section className="bg-[var(--bg-card)] rounded-3xl shadow-xl border border-[var(--border-color)] w-full max-w-3xl p-10 flex flex-col items-center text-center animate-fadeIn">
-        <h1 className="text-4xl font-bold mb-10">{t.nav.contact}</h1>
+        <h1 className="text-4xl font-bold mb-10">
+          {t?.nav?.contact ?? "Contacto"}
+        </h1>
 
         <div className="w-full bg-white/70 dark:bg-slate-700/50 backdrop-blur-md p-6 rounded-2xl shadow-md space-y-5">
           <div className="flex justify-between border-b border-gray-300 pb-3 hover:bg-blue-50 dark:hover:bg-slate-800 transition rounded-md px-3 group">
@@ -28,7 +29,11 @@ export default function Contactos() {
           <div className="flex justify-between border-b border-gray-300 pb-3 hover:bg-blue-50 dark:hover:bg-slate-800 transition rounded-md px-3 group">
             <p>
               <strong>LinkedIn:</strong>{" "}
-              <a href="https://linkedin.com/in/diego-alejandro-mallama-yandun" target="_blank" className="text-blue-700 hover:underline">
+              <a
+                href="https://linkedin.com/in/diego-alejandro-mallama-yandun"
+                target="_blank"
+                className="text-blue-700 hover:underline"
+              >
                 Diego Alejandro Mallama Yandun
               </a>
             </p>
@@ -38,7 +43,11 @@ export default function Contactos() {
           <div className="flex justify-between hover:bg-blue-50 dark:hover:bg-slate-800 transition rounded-md px-3 group">
             <p>
               <strong>GitHub:</strong>{" "}
-              <a href="https://github.com/Diego2004-max" target="_blank" className="text-blue-700 hover:underline">
+              <a
+                href="https://github.com/Diego2004-max"
+                target="_blank"
+                className="text-blue-700 hover:underline"
+              >
                 Diego2004-max
               </a>
             </p>
