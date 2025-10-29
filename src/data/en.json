@@ -1,4 +1,17 @@
 {
+  "hero": {
+    "nameLine1": "Diego Alejandro Mallama Yandun",
+    "nameLine2": "Software Developer",
+    "subtitle": "Passionate about web development, innovation, and continuous improvement.",
+    "cvLabel": "Download CV"
+  },
+  "cards": {
+    "about": "I'm a developer in training, curious and focused on innovation.",
+    "academic": "My academic journey and achievements that shape my professional growth.",
+    "projects": "Some of the web and software projects I have developed.",
+    "testimonials": "Feedback and experiences shared by colleagues and mentors.",
+    "contact": "Want to collaborate with me? Get in touch easily."
+  },
   "nav": {
     "home": "Home",
     "about": "About Me",
@@ -6,7 +19,8 @@
     "projects": "Projects",
     "testimonials": "Testimonials",
     "contact": "Contact"
-  },
+  }
+,
   "about": {
     "intro": "I'm 21 years old, I live an active life and do many activities. Some of them are:",
     "activities": [

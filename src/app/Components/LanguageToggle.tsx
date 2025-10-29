@@ -1,46 +1,32 @@
 'use client';
-import { useState } from "react";
-import { useLanguage } from "../../context/LanguageContext";
+import { useState } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
+import { Globe } from 'lucide-react';
 
 export default function LanguageToggle() {
-  const { lang, setLang } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
-
-  const langs = [
-    { code: "es", label: "Español" },
-    { code: "en", label: "English" },
-  ];
-  const current = langs.find((l) => l.code === lang);
 
   return (
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="px-4 py-2 bg-blue-200 text-blue-900 font-semibold rounded-lg 
-                   shadow-sm hover:bg-blue-300 transition-all border border-blue-300"
+        className="flex items-center gap-1 px-2 py-1 text-sm bg-slate-200/70 dark:bg-slate-700/50 
+                   rounded-lg hover:bg-slate-300/60 dark:hover:bg-slate-600/50"
       >
-        {current?.code.toUpperCase()}
+        <Globe size={16} />
+        {language.toUpperCase()}
       </button>
 
       {open && (
-        <div
-          className="absolute mt-2 w-32 bg-white border border-blue-200 rounded-xl shadow-md z-20 overflow-hidden"
-          onMouseLeave={() => setOpen(false)}
-        >
-          {langs.map((l) => (
-            <button
-              key={l.code}
-              onClick={() => {
-                setLang(l.code as "es" | "en");
-                setOpen(false);
-              }}
-              className={`block w-full text-left px-3 py-2 hover:bg-blue-100 text-blue-800 ${
-                l.code === lang ? "bg-blue-50 font-semibold" : ""
-              }`}
-            >
-              {l.label}
-            </button>
-          ))}
+        <div className="absolute top-9 left-0 bg-white dark:bg-slate-800 border border-slate-200 
+                        dark:border-slate-600 rounded-lg shadow-md text-sm z-50">
+          <button
+            onClick={() => { toggleLanguage(); setOpen(false); }}
+            className="block px-4 py-2 w-full text-left hover:bg-blue-100 dark:hover:bg-slate-700"
+          >
+            {language === 'es' ? 'English' : 'Español'}
+          </button>
         </div>
       )}
     </div>

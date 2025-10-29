@@ -1,18 +1,14 @@
-import "./globals.css";
-import { ThemeProvider } from "../context/ThemeContext";
-import { LanguageProvider } from "../context/LanguageContext";
-
-export const metadata = {
-  title: "Portafolio | Diego Mallama",
-  description: "Desarrollador en formación apasionado por la tecnología, el diseño y la innovación.",
-};
+import './globals.css';
+import Navbar from './components/Navbar';
+import { LanguageProvider } from '../context/LanguageContext';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className="transition-all duration-500 bg-[var(--bg-page)] text-[var(--text-primary)]">
+    <html lang="es" suppressHydrationWarning>
+      <body className="bg-[#e7edf7] dark:bg-[#0f172a] transition-colors duration-300">
         <LanguageProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <Navbar />
+          {children}
         </LanguageProvider>
       </body>
     </html>

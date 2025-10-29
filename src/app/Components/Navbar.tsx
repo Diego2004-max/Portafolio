@@ -1,8 +1,10 @@
 'use client';
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { useLanguage } from "../../context/LanguageContext";
-import { getSiteData } from "../../lib/getSiteData";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../../context/LanguageContext';
+import { getSiteData } from '../../lib/getSiteData';
 
 export default function Navbar() {
   const { language } = useLanguage();
@@ -13,44 +15,27 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex justify-center mb-4"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 
+                 flex flex-wrap justify-between items-center gap-5
+                 bg-white/95 dark:bg-slate-900/90 backdrop-blur-md
+                 border border-slate-200 dark:border-slate-700
+                 rounded-2xl px-6 py-3 shadow-lg max-w-5xl w-[90%]"
     >
-      <ul
-        className="flex flex-wrap justify-center gap-3 md:gap-6 px-5 py-2 
-                   bg-blue-100/70 dark:bg-slate-800/50 rounded-2xl 
-                   border border-blue-200 dark:border-slate-600 shadow-inner"
-      >
-        <li>
-          <Link href="#hero" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.home}
-          </Link>
-        </li>
-        <li>
-          <Link href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.about}
-          </Link>
-        </li>
-        <li>
-          <Link href="#academic" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.academic}
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.projects}
-          </Link>
-        </li>
-        <li>
-          <Link href="#testimonials" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.testimonials}
-          </Link>
-        </li>
-        <li>
-          <Link href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-            {t.nav.contact}
-          </Link>
-        </li>
+      {/* 🔹 Navegación */}
+      <ul className="flex flex-wrap gap-5 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <li><Link href="#hero" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.home}</Link></li>
+        <li><Link href="#about" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.about}</Link></li>
+        <li><Link href="#academic" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.academic}</Link></li>
+        <li><Link href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.projects}</Link></li>
+        <li><Link href="#testimonials" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.testimonials}</Link></li>
+        <li><Link href="#contact" className="hover:text-blue-600 dark:hover:text-blue-400">{t.nav.contact}</Link></li>
       </ul>
+
+      {/* 🔹 Controles */}
+      <div className="flex items-center gap-3">
+        <LanguageToggle />
+        <ThemeToggle />
+      </div>
     </motion.nav>
   );
 }

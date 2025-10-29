@@ -12,32 +12,39 @@ interface CardBaseProps {
 export default function CardBase({ icon, title, href, preview }: CardBaseProps) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05, y: -6 }}
-      transition={{ type: 'spring', stiffness: 250, damping: 15 }}
-      className="w-52 h-64 bg-gradient-to-b from-[#dfeaff] to-[#f3f7ff] 
-                 dark:from-[#1e293b] dark:to-[#334155]
-                 border border-blue-200 dark:border-slate-600 rounded-3xl 
-                 p-5 shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-500/20 
-                 flex flex-col justify-between items-center text-center 
-                 transition-all duration-300"
+      whileHover={{ scale: 1.04, y: -4 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 16 }}
+      className="w-[200px] h-[180px]
+                 bg-gradient-to-b from-[#f7f9fc] to-[#e7edf7]
+                 dark:from-[#1e2533] dark:to-[#2a3245]
+                 border border-slate-200 dark:border-slate-700
+                 rounded-2xl shadow-md hover:shadow-blue-300/30
+                 flex flex-col justify-center items-center text-center
+                 p-4 transition-all duration-300"
     >
+      {/* Ícono */}
       <motion.div
-        className="text-4xl mb-2 text-blue-700 dark:text-blue-300"
-        whileHover={{ rotate: 10 }}
+        className="text-3xl mb-1 text-blue-700 dark:text-blue-300"
+        whileHover={{ rotate: 8 }}
         transition={{ duration: 0.3 }}
       >
         {icon}
       </motion.div>
 
-      <h3 className="font-bold text-lg text-blue-900 dark:text-blue-200 mb-1">{title}</h3>
+      {/* Título */}
+      <h3 className="font-semibold text-base text-slate-800 dark:text-slate-100 mb-1">
+        {title}
+      </h3>
 
-      <p className="text-sm text-slate-700 dark:text-slate-300 leading-snug flex-grow px-1">
+      {/* Descripción */}
+      <p className="text-[13px] text-slate-600 dark:text-slate-300 leading-snug mb-2 px-1">
         {preview}
       </p>
 
+      {/* Enlace */}
       <Link
         href={href}
-        className="text-blue-700 dark:text-blue-400 font-semibold hover:underline mt-1 transition-all"
+        className="text-blue-600 dark:text-blue-400 font-medium text-sm hover:underline transition-all"
       >
         Ir →
       </Link>
