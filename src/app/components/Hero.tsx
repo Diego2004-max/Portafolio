@@ -17,16 +17,18 @@ export default function Hero() {
     <section
       id="hero"
       className="
-        flex flex-col items-center justify-center min-h-screen p-8
-        bg-[var(--bg-page)] text-[var(--text-primary)] transition-all
-      "
+            flex flex-col items-center justify-center 
+            min-h-screen p-8 pt-32
+            bg-[var(--bg-page)] text-[var(--text-primary)] transition-all"
     >
       <motion.h1
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] dark:text-blue-300 text-center"
-      >
+          className="
+                text-3xl md:text-5xl font-bold
+                text-[var(--text-primary)]
+                dark:text-blue-300
+                text-center
+                drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]"
+          >
         {hero.nameLine1} <br />
         {hero.nameLine2}
       </motion.h1>

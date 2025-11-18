@@ -16,7 +16,7 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="
-        fixed top-4 left-1/2 -translate-x-1/2 z-50
+        fixed top-5 left-1/2 -translate-x-1/2 z-50
         flex flex-wrap justify-between items-center gap-5
         bg-[var(--bg-card)]/95 backdrop-blur-md
         border border-[var(--border-color)]

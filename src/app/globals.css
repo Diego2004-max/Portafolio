@@ -2,12 +2,12 @@
 
 /* 🌤️ Modo claro por defecto */
 :root {
-  --bg-page: #f5f8ff;          /* fondo más claro, azul pastel muy suave */
-  --bg-card: #ffffff;          /* tarjetas blancas suaves */
-  --text-primary: #1e3a8a;     /* azul fuerte */
-  --text-secondary: #475569;   /* gris-azulado */
-  --border-color: #c7d2fe;     /* azul claro */
-  --shadow-light: 8px 8px 16px #dbeafe, -8px -8px 16px #ffffff; /* efecto neumórfico */
+  --bg-page: #eef2ff;          /* Muy suave pero con más contraste */
+  --bg-card: #ffffff;          /* Blanco puro */
+  --text-primary: #1e3a8a;     /* Azul fuerte elegante */
+  --text-secondary: #334155;   /* GRIS AZULADO MÁS OSCURO (importante) */
+  --border-color: #c7d2fe;     /* Azul claro */
+  --shadow-light: 8px 8px 16px #d0dbff, -8px -8px 16px #ffffff;
 }
 
 /* 🌙 Modo oscuro */
