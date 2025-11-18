@@ -1,7 +1,7 @@
-import './globals.css';
-import Navbar from './components/Navbar';
-import { LanguageProvider } from '../context/LanguageContext';
-import { ThemeProvider } from '../context/ThemeContext';
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import { LanguageProvider } from "../context/LanguageContext";
+import { ThemeProvider } from "../context/ThemeContext";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
