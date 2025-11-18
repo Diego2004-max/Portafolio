@@ -23,11 +23,11 @@ export default function Hero() {
     >
       <motion.h1
           className="
-                text-3xl md:text-5xl font-bold
-                text-[var(--text-primary)]
-                dark:text-blue-300
-                text-center
-                drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]"
+            text-3xl md:text-5xl font-bold
+            text-[#1e3a8a] /* azul más fuerte */
+            dark:text-blue-300
+            text-center
+            drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]"
           >
         {hero.nameLine1} <br />
         {hero.nameLine2}

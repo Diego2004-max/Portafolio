@@ -5,20 +5,20 @@
   --bg-page: #eef2ff;          /* Muy suave pero con más contraste */
   --bg-card: #ffffff;          /* Blanco puro */
   --text-primary: #1e3a8a;     /* Azul fuerte elegante */
-  --text-secondary: #334155;   /* GRIS AZULADO MÁS OSCURO (importante) */
-  --border-color: #c7d2fe;     /* Azul claro */
+  --text-secondary: #1e293b; /* mucho más visible */
+  --border-color: #d0d7ff;   /* más contraste */
   --shadow-light: 8px 8px 16px #d0dbff, -8px -8px 16px #ffffff;
 }
 
 /* 🌙 Modo oscuro */
 .dark {
-  --bg-main: #0b1220;
+  --bg-page: #0b1120;     /* <--- FONDO GLOBAL OSCURO */
   --bg-card: #1b2433;
   --bg-hover: #273347;
   --text-primary: #dce7ff;
   --text-secondary: #b6c3e0;
-  --border-color: #2c3e55;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --border-color: #334155;
+  --shadow-light: 0 0 0 transparent; /* elimina sombras claras */
 }
 
 /* 🌙 Alternativa: data-theme oscuro */
