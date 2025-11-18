@@ -1,12 +1,17 @@
 import CardBase from './CardBase';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getSiteData } from '../../../lib/getSiteData';
 
 export default function ProjectsCard() {
+  const { language } = useLanguage();
+  const t = getSiteData(language);
+
   return (
     <CardBase
       icon="💡"
-      title="Proyectos"
+      title={t.nav.projects}
       href="/projects"
-      preview="Algunos de los proyectos web y de software que he desarrollado."
+      preview={t.cards.projects}
     />
   );
 }

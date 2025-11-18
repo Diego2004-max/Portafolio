@@ -1,12 +1,17 @@
 import CardBase from './CardBase';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getSiteData } from '../../../lib/getSiteData';
 
 export default function AcademicCard() {
+  const { language } = useLanguage();
+  const t = getSiteData(language);
+
   return (
     <CardBase
       icon="🎓"
-      title="Formación"
+      title={t.nav.academic}
       href="/academic"
-      preview="Mi recorrido académico y los logros que marcan mi crecimiento profesional."
+      preview={t.cards.academic}
     />
   );
 }

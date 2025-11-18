@@ -1,12 +1,17 @@
 import CardBase from './CardBase';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getSiteData } from '../../../lib/getSiteData';
 
 export default function AboutCard() {
+  const { language } = useLanguage();
+  const t = getSiteData(language);
+
   return (
     <CardBase
       icon="👤"
-      title="Acerca de mí"
+      title={t.nav.about}
       href="/about"
-      preview="Soy un desarrollador en formación, curioso y enfocado en la innovación."
+      preview={t.cards.about}
     />
   );
 }

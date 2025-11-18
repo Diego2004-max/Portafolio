@@ -7,17 +7,28 @@ export interface SiteData {
     testimonials: string;
     contact: string;
   };
-  hero?: {
+
+  cards: {
+    about: string;
+    academic: string;
+    projects: string;
+    testimonials: string;
+    contact: string;
+  };
+
+  hero: {
     nameLine1: string;
     nameLine2: string;
     subtitle: string;
     cvLabel: string;
   };
-  socials?: {
+
+  socials: {
     label: string;
     href: string;
   }[];
-  about?: {
+
+  about: {
     intro: string;
     activities: {
       titulo: string;
@@ -25,17 +36,20 @@ export interface SiteData {
       imagen: string;
     }[];
   };
-  academic?: {
+
+  academic: {
     studies: string[];
   };
-  projects?: {
+
+  projects: {
     list: {
       title: string;
       desc: string;
       img: string;
     }[];
   };
-  testimonials?: {
+
+  testimonials: {
     list: {
       nombre: string;
       texto: string;

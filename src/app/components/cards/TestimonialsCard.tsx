@@ -1,12 +1,17 @@
 import CardBase from './CardBase';
+import { useLanguage } from '../../../context/LanguageContext';
+import { getSiteData } from '../../../lib/getSiteData';
 
 export default function TestimonialsCard() {
+  const { language } = useLanguage();
+  const t = getSiteData(language);
+
   return (
     <CardBase
       icon="💬"
-      title="Testimonios"
+      title={t.nav.testimonials}
       href="/testimonials"
-      preview="Opiniones y experiencias compartidas por colegas y mentores."
+      preview={t.cards.testimonials}
     />
   );
 }
