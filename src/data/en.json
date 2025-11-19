@@ -24,11 +24,11 @@
   "about": {
     "intro": "I'm 21 years old, I live an active life and do many activities. Some of them are:",
     "activities": [
-      { "titulo": "Sports", "descripcion": "Basketball, soccer, volleyball.", "imagen": "/Deportes.jpg" },
-      { "titulo": "Trips", "descripcion": "Family outings every weekend.", "imagen": "/Paseos.jpg" },
-      { "titulo": "Walks", "descripcion": "Going on motorcycle rides with my partner.", "imagen": "/Salidas.jpg" },
-      { "titulo": "Friends", "descripcion": "Going out and having fun with friends.", "imagen": "/Encuentros.jpg" },
-      { "titulo": "Study", "descripcion": "In my free time, I study and learn about software development.", "imagen": "/Estudiar.jpg" }
+      { "titulo": "Sports", "descripcion": "Basketball, soccer, volleyball.", "imagen": "/depoertes2.jpg" },
+      { "titulo": "Trips", "descripcion": "Family outings every weekend.", "imagen": "/viajes.jpg" },
+      { "titulo": "Walks", "descripcion": "I like going out to explore towns", "imagen": "/viajes2.jpg" },
+      { "titulo": "Friends", "descripcion": "Going out and having fun with friends.", "imagen": "/encuentros2.jpg" },
+      { "titulo": "Study", "descripcion": "In my free time, I study and learn about software development.", "imagen": "/encuentros2.jpg" }
     ]
   },
   "academic": {
