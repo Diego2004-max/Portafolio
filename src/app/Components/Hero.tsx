@@ -79,7 +79,7 @@ export default function Hero() {
       </div>
 
       {/* BOTÓN CV */}
-      <Link href="/cv.pdf" target="_blank">
+      <Link href="/CV.pdf" target="_blank">
         <button className="
           bg-blue-500 hover:bg-blue-600 text-white
           px-6 py-2 rounded-md shadow-md font-medium
