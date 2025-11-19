@@ -74,6 +74,13 @@ body {
               border-color 0.2s ease;
 }
 
+/* Corregir fondo oscuro completo */
+body,
+html {
+  background: var(--bg-page) !important;
+}
+
+
 /* Botones */
 button {
   font-weight: 500;

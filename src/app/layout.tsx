@@ -6,18 +6,13 @@ import { ThemeProvider } from "../context/ThemeContext";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="
-        min-h-screen w-full
-        bg-[var(--bg-page)]
-        text-[var(--text-primary)]
-        transition-colors duration-300
-      ">
+      <body className="min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] transition-colors duration-300">
         <ThemeProvider>
           <LanguageProvider>
-            <Navbar />
-            <main className="pt-28"> {/* espacio para el navbar */}
+            <div className="min-h-screen bg-[var(--bg-page)]">   {/* 🔥 FONDO GLOBAL REAL */}
+              <Navbar />
               {children}
-            </main>
+            </div>
           </LanguageProvider>
         </ThemeProvider>
       </body>

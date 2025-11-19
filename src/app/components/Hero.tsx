@@ -18,7 +18,7 @@ export default function Hero() {
       id="hero"
       className="
         flex flex-col items-center justify-center
-        min-h-screen p-8 pt-28
+        min-h-screen pt-40 p-8
         bg-[var(--bg-page)] text-[var(--text-primary)]
         transition-all
       "
