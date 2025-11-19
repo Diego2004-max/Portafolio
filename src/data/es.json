@@ -50,7 +50,7 @@
 
   "projects": {
     "list": [
-      { "title": "Portafolio Personal", "desc": "Next.js + Tailwind + Animaciones Pro.", "img": "/portafolio.jpg" },
+      { "title": "Portafolio Personal", "desc": "Next.js + Tailwind + Animaciones Pro.", "img": "/portafolio.jpg", "link": "https://github.com/Diego2004-max/Portafolio.git" },
       { "title": "Sistema Escolar", "desc": "CRUD + Dashboard + Login.", "img": "/dash.jpg" },
       { "title": "App de Tareas", "desc": "React Native + Firebase.", "img": "/tareas.jpg" }
     ]

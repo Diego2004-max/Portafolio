@@ -36,7 +36,6 @@ export default function ProjectsPage() {
                          rounded-2xl shadow-md p-5 sm:p-6 lg:p-8
                          hover:shadow-xl transition-all"
             >
-
               {/* INFO */}
               <div className="w-full lg:w-2/3 mb-5 lg:mb-0">
                 <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
@@ -46,17 +45,35 @@ export default function ProjectsPage() {
               {/* IMAGEN RESPONSIVA */}
               <div className="w-full lg:w-1/3 flex justify-center">
                 <div className="w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[260px]">
-                  <Image
-                    src={project.img}
-                    alt={project.title}
-                    width={400}
-                    height={230}
-                    className="rounded-xl border border-[var(--border-color)]
-                               shadow-md object-cover w-full h-auto"
-                  />
+
+                  {/* SI ES EL PRIMER PROYECTO → HACER LA IMAGEN CLICKEABLE */}
+                  {index === 0 ? (
+                    <Link
+                      href="https://github.com/Diego2004-max/Portafolio.git"
+                      target="_blank"
+                    >
+                      <Image
+                        src={project.img}
+                        alt={project.title}
+                        width={400}
+                        height={230}
+                        className="rounded-xl border border-[var(--border-color)]
+                                   shadow-md object-cover w-full h-auto cursor-pointer"
+                      />
+                    </Link>
+                  ) : (
+                    <Image
+                      src={project.img}
+                      alt={project.title}
+                      width={400}
+                      height={230}
+                      className="rounded-xl border border-[var(--border-color)]
+                                 shadow-md object-cover w-full h-auto"
+                    />
+                  )}
+
                 </div>
               </div>
-
             </div>
           ))}
         </div>
@@ -70,7 +87,6 @@ export default function ProjectsPage() {
             </button>
           </Link>
         </div>
-
       </div>
 
       <SideSectionMenu current="projects" />
