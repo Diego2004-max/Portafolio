@@ -58,9 +58,9 @@
 
   "testimonials": {
     "list": [
-      { "nombre": "Nixon Burbano", "texto": "Excelente persona, responsable y dedicado.", "img": "/Person1.jpg" },
-      { "nombre": "Felipe Gualguan", "texto": "Muy creativo y rápido aprendiendo.", "img": "/Person2.jpg" },
-      { "nombre": "Jhon Chapal", "texto": "Gran trabajo en equipo, comprometido.", "img": "/Person3.jpg" }
+      { "nombre": "Nixon Burbano, Ingeniero de sistemas", "texto": "Excelente persona, muy responsable, se integra bien en el equipo", "img": "/Person1.jpg" },
+      { "nombre": "Felipe Gualguan, Ingeniero de sistemas", "texto": "Es una persona creativa y muy ingeniosa para adquirir nuevos conocimientos", "img": "/Person2.jpg" },
+      { "nombre": "Jhon Chapal, Instrumentador quirurjico", "texto": "Buena experiencia, me gusta la forma de trabajar, aunque todavía estamos en el desarrollo del programa", "img": "/Person3.jpg" }
     ]
   },
 

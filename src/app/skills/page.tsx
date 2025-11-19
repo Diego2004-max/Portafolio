@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import SideSectionMenu from "../app/components/SideSectionMenu"
-import { useLanguage } from "../context/LanguageContext";
-import { getSiteData } from "../lib/getSiteData";
+import SideSectionMenu from "../components/SideSectionMenu"
+import { useLanguage } from "../../context/LanguageContext";
+import { getSiteData } from "../../lib/getSiteData";
 
 export default function SkillsPage() {
 
