@@ -71,7 +71,6 @@ export default function SideSectionMenu({ current }: SideSectionMenuProps) {
     },
   ];
 
-  // Si se entra directo por URL, marcamos activo por pathname
   const activeKey =
     sections.find((s) => s.href === pathname)?.key ?? current;
 

@@ -69,7 +69,6 @@ export default function AcademicPage() {
           ))}
         </ul>
 
-        {/* CARRUSEL ANIMADO */}
         <div className="relative w-full overflow-hidden py-4">
           <motion.div
             className="flex w-max gap-20"

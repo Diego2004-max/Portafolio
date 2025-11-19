@@ -38,7 +38,6 @@ export default function Navbar() {
         <li><Link href="/contact">{t.nav.contact}</Link></li>
       </ul>
 
-      {/* TOGGLES DESKTOP */}
       <div className="hidden md:flex gap-2">
         <LanguageToggle />
         <ThemeToggle />

@@ -7,7 +7,6 @@ export default function FooterCarousel({ images }: { images: string[] }) {
 
   return (
     <footer className="px-4 pb-8">
-      {/* Vista previa grande */}
       <div className="relative w-full aspect-[16/9] bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden mb-4">
         <Image src={images[active] || '/carousel/1.jpg'} alt="" fill className="object-cover" />
       </div>

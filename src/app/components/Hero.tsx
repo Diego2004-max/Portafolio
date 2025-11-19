@@ -78,7 +78,7 @@ export default function Hero() {
         <a href="https://github.com" target="_blank"><FaGithub className="hover:scale-110 transition" /></a>
       </div>
 
-      {/* BOTÓN CV */}
+      {/*CV */}
       <Link href="/CV.pdf" target="_blank">
         <button className="
           bg-blue-500 hover:bg-blue-600 text-white
