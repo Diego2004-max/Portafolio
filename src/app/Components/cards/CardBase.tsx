@@ -18,8 +18,11 @@ export default function CardBase({ icon, title, href, preview }: CardBaseProps) 
         w-[200px] h-[180px]
         bg-[var(--bg-card)]
         border border-[var(--border-color)]
-        rounded-2xl shadow-md
-        flex flex-col justify-center items-center text-center p-4
+        rounded-2xl shadow-[var(--shadow-light)]
+        hover:shadow-lg
+        flex flex-col justify-center items-center
+        text-center p-4
+        transition-all duration-300
       "
     >
       {/* Ícono */}
@@ -33,14 +36,19 @@ export default function CardBase({ icon, title, href, preview }: CardBaseProps) 
       </h3>
 
       {/* Texto */}
-      <p className="text-sm leading-snug text-[var(--text-secondary)] px-2">
+      <p className="text-[14px] leading-snug text-[var(--text-secondary)] px-2">
         {preview}
       </p>
 
       {/* Enlace */}
       <Link
         href={href}
-        className="text-blue-600 dark:text-blue-400 font-medium text-sm hover:underline mt-2"
+        className="
+          font-medium text-sm mt-2
+          text-blue-600
+          dark:text-blue-400
+          hover:underline
+        "
       >
         Ir →
       </Link>

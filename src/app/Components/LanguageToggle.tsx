@@ -11,19 +11,37 @@ export default function LanguageToggle() {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 px-2 py-1 text-sm bg-slate-200/70 dark:bg-slate-700/50 
-                   rounded-lg hover:bg-slate-300/60 dark:hover:bg-slate-600/50"
+        className="
+          flex items-center gap-1 px-2 py-1 text-sm 
+          bg-[var(--bg-card)] text-[var(--text-primary)]
+          border border-[var(--border-color)]
+          rounded-lg shadow-sm
+          hover:bg-[var(--border-color)]/40
+          transition
+        "
       >
         <Globe size={16} />
         {language.toUpperCase()}
       </button>
 
       {open && (
-        <div className="absolute top-9 left-0 bg-white dark:bg-slate-800 border border-slate-200 
-                        dark:border-slate-600 rounded-lg shadow-md text-sm z-50">
+        <div
+          className="
+            absolute top-9 left-0 
+            bg-[var(--bg-card)]
+            border border-[var(--border-color)]
+            rounded-lg shadow-md 
+            text-sm z-50
+            w-28
+          "
+        >
           <button
             onClick={() => { toggleLanguage(); setOpen(false); }}
-            className="block px-4 py-2 w-full text-left hover:bg-blue-100 dark:hover:bg-slate-700"
+            className="
+              block px-4 py-2 w-full text-left
+              text-[var(--text-primary)]
+              hover:bg-[var(--border-color)]/40
+            "
           >
             {language === 'es' ? 'English' : 'Español'}
           </button>

@@ -2,11 +2,11 @@
 
 /* 🌤️ MODO CLARO */
 :root {
-  --bg-page: #eef2ff;      
-  --bg-card: #ffffff;      
-  --text-primary: #0f172a; 
+  --bg-page: #eef2ff;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
   --text-secondary: #334155;
-  --border-color: #d0d7ff; 
+  --border-color: #d0d7ff;
   --shadow-light: 4px 4px 10px #d4dcff, -4px -4px 10px #ffffff;
 }
 
@@ -14,18 +14,19 @@
 html.dark {
   --bg-page: #0b1120;
   --bg-card: #1b2433;
-  --text-primary: #dce7ff;
-  --text-secondary: #b6c3e0;
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
   --border-color: #334155;
   --shadow-light: none;
 }
 
 /* BASE GLOBAL */
 html, body {
-  background: var(--bg-page) !important;
+  background-color: var(--bg-page) !important;
   color: var(--text-primary);
   min-height: 100%;
-  transition: background 0.3s ease, color 0.3s ease;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -41,22 +42,30 @@ body {
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 }
-.card:hover { transform: translateY(-4px); }
+.card:hover {
+  transform: translateY(-4px);
+}
 
 /* ANIMACIONES */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-fadeIn { animation: fadeIn 0.4s ease-in-out forwards; }
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
 
 @keyframes float-image {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-8px) scale(1.03); }
 }
-.animate-float-image { animation: float-image 3s ease-in-out infinite; }
 
-/* TRANSICIONES */
+.animate-float-image {
+  animation: float-image 3s ease-in-out infinite;
+}
+
+/* SUAVIZADO GLOBAL */
 * {
   transition: background-color 0.2s ease,
               color 0.2s ease,
@@ -64,9 +73,13 @@ body {
 }
 
 /* SCROLLBAR */
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar {
+  width: 8px;
+}
 ::-webkit-scrollbar-thumb {
   background: #a5b4fc;
   border-radius: 8px;
 }
-::-webkit-scrollbar-thumb:hover { background: #818cf8; }
+::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
