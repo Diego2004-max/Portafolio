@@ -14,19 +14,14 @@ export default function Navbar() {
     <motion.nav
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       className="
-        absolute
-        top-4                /* NAV DENTRO DEL HERO */
-        left-1/2 -translate-x-1/2
-        z-50
+        absolute top-6 left-1/2 -translate-x-1/2 z-50
         flex items-center justify-between gap-5
         bg-[var(--bg-card)]/90 backdrop-blur-xl
         border border-[var(--border-color)]
-        rounded-2xl
-        px-6 py-3
-        shadow-md
-        max-w-5xl w-[90%]
+        rounded-2xl px-6 py-3 shadow-md
+        w-[90%] max-w-5xl
         text-[var(--text-primary)]
       "
     >

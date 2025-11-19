@@ -1,63 +1,39 @@
 @import "tailwindcss";
 
-/* 🌤️ Modo claro por defecto */
+/* 🌤️ MODO CLARO */
 :root {
-  --bg-page: #eef2ff;         /* fondo pastel */
-  --bg-card: #ffffff;         /* tarjetas blancas */
-  --text-primary: #0f172a;    /* azul negro profesional */
-  --text-secondary: #334155;  /* gris fuerte */
-  --border-color: #d0d7ff;    /* azul clarito (corregido) */
+  --bg-page: #eef2ff;      
+  --bg-card: #ffffff;      
+  --text-primary: #0f172a; 
+  --text-secondary: #334155;
+  --border-color: #d0d7ff; 
   --shadow-light: 4px 4px 10px #d4dcff, -4px -4px 10px #ffffff;
 }
 
-/* 🌙 Modo oscuro global */
-.dark {
+/* 🌙 MODO OSCURO */
+html.dark {
   --bg-page: #0b1120;
   --bg-card: #1b2433;
-  --text-primary: #e2e8f0;
-  --text-secondary: #cbd5e1;
+  --text-primary: #dce7ff;
+  --text-secondary: #b6c3e0;
   --border-color: #334155;
   --shadow-light: none;
 }
 
-/* 📜 Base global */
-html {
-  scroll-behavior: smooth;
-  background-color: var(--bg-page);
+/* BASE GLOBAL */
+html, body {
+  background: var(--bg-page) !important;
   color: var(--text-primary);
   min-height: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body {
-  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
   width: 100%;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg-page);
-  color: var(--text-primary);
 }
 
-/* 🌈 Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn { animation: fadeIn 0.4s ease-in-out forwards; }
-
-/* Flotación */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.animate-float { animation: float 3s ease-in-out infinite; }
-
-@keyframes float-image {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
-}
-.animate-float-image { animation: float-image 3s ease-in-out infinite; }
-
-/* Cards */
+/* CARDS */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -67,28 +43,27 @@ body {
 }
 .card:hover { transform: translateY(-4px); }
 
-/* Transiciones suaves */
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.4s ease-in-out forwards; }
+
+@keyframes float-image {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
+}
+.animate-float-image { animation: float-image 3s ease-in-out infinite; }
+
+/* TRANSICIONES */
 * {
   transition: background-color 0.2s ease,
               color 0.2s ease,
               border-color 0.2s ease;
 }
 
-/* Corregir fondo oscuro completo */
-body,
-html {
-  background: var(--bg-page) !important;
-}
-
-
-/* Botones */
-button {
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* Scrollbar */
+/* SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb {
   background: #a5b4fc;
