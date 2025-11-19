@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../../context/LanguageContext";
-import { getSiteData } from "../../lib/getSiteData";
-import SideSectionMenu from "../components/SideSectionMenu";
+import { useLanguage } from "@/context/LanguageContext";
+import { getSiteData } from "@/lib/getSiteData";
+import SideSectionMenu from "@/app/components/SideSectionMenu";
 
 export default function ProjectsPage() {
   const { language } = useLanguage();
@@ -14,59 +14,63 @@ export default function ProjectsPage() {
     <section
       id="projects"
       className="min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)]
-                 pt-32 pb-16 px-4"
+                 pt-32 pb-20 px-4 sm:px-6 lg:px-10 transition-all flex justify-center"
     >
       <div
-        className="max-w-6xl mx-auto
-                   bg-[var(--bg-card)]
-                   rounded-3xl shadow-xl
-                   border border-[var(--border-color)]
-                   p-10"
+        className="max-w-6xl w-full bg-[var(--bg-card)] rounded-3xl shadow-xl
+                   border border-[var(--border-color)] p-6 sm:p-10 lg:p-14"
       >
-        <h1 className="text-4xl font-bold mb-3">{t.nav.projects}</h1>
-
-        <p className="text-[var(--text-secondary)] max-w-3xl mx-auto mb-10">
-          {language === "es"
-            ? "Algunos proyectos que he desarrollado."
-            : "Some projects I’ve worked on."}
+        {/* TÍTULO */}
+        <h1 className="text-4xl font-bold mb-4">{t.nav.projects}</h1>
+        <p className="text-[var(--text-secondary)] mb-10">
+          Algunos proyectos que he desarrollado.
         </p>
 
-        <div className="space-y-8">
-          {t.projects.list.map((p: any, i: number) => (
+        {/* LISTA DE PROYECTOS */}
+        <div className="flex flex-col gap-8">
+          {t.projects.list.map((project: any, index: number) => (
             <div
-              key={i}
-              className="flex flex-col md:flex-row items-center justify-between gap-6
+              key={index}
+              className="flex flex-col lg:flex-row items-center justify-between
                          bg-[var(--bg-card)] border border-[var(--border-color)]
-                         rounded-2xl shadow-md p-6
-                         transition-transform hover:-translate-y-1"
+                         rounded-2xl shadow-md p-5 sm:p-6 lg:p-8
+                         hover:shadow-xl transition-all"
             >
-              <div className="w-full md:w-2/3 text-left">
-                <p className="text-xl font-semibold mb-1 text-[var(--text-primary)]">
-                  {p.title}
-                </p>
-                <p className="text-[var(--text-secondary)]">{p.desc}</p>
+
+              {/* INFO */}
+              <div className="w-full lg:w-2/3 mb-5 lg:mb-0">
+                <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                <p className="text-[var(--text-secondary)]">{project.desc}</p>
               </div>
 
-              <div className="flex justify-center md:justify-end w-full md:w-1/3">
-                <Image
-                  src={p.img}
-                  alt={p.title}
-                  width={500}
-                  height={500}
-                  className="rounded-lg shadow-md object-contain
-                             bg-[var(--bg-card)] p-2
-                             border border-[var(--border-color)]"
-                />
+              {/* IMAGEN RESPONSIVA */}
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[260px]">
+                  <Image
+                    src={project.img}
+                    alt={project.title}
+                    width={400}
+                    height={230}
+                    className="rounded-xl border border-[var(--border-color)]
+                               shadow-md object-cover w-full h-auto"
+                  />
+                </div>
               </div>
+
             </div>
           ))}
         </div>
 
-        <Link href="/" className="inline-block mt-10">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md shadow-md">
-            Home
-          </button>
-        </Link>
+        {/* BOTÓN HOME */}
+        <div className="flex justify-center mt-12">
+          <Link href="/">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 
+                               rounded-xl shadow-md transition">
+              Home
+            </button>
+          </Link>
+        </div>
+
       </div>
 
       <SideSectionMenu current="projects" />
