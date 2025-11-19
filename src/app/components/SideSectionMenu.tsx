@@ -11,6 +11,7 @@ import {
   FolderGit2,
   MessageCircle,
   Phone,
+  Sparkles,
 } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { getSiteData } from "../../lib/getSiteData";
@@ -54,6 +55,13 @@ export default function SideSectionMenu({ current }: SideSectionMenuProps) {
       href: "/testimonials",
       icon: MessageCircle,
       label: t.nav.testimonials,
+    },
+
+    {
+        key: "skills" as SectionKey,
+        href: "/skills",
+        icon: Sparkles,
+        label: t.nav.skills,
     },
     {
       key: "contact" as SectionKey,
