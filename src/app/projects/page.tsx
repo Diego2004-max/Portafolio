@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         className="max-w-6xl w-full bg-[var(--bg-card)] rounded-3xl shadow-xl
                    border border-[var(--border-color)] p-6 sm:p-10 lg:p-14"
       >
-        {/* TÍTULO */}
+      
         <h1 className="text-4xl font-bold mb-4">{t.nav.projects}</h1>
         <p className="text-[var(--text-secondary)] mb-10">
           Algunos proyectos que he desarrollado.
@@ -42,11 +42,10 @@ export default function ProjectsPage() {
                 <p className="text-[var(--text-secondary)]">{project.desc}</p>
               </div>
 
-              {/* IMAGEN RESPONSIVA */}
+              
               <div className="w-full lg:w-1/3 flex justify-center">
                 <div className="w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[260px]">
 
-                  {/* SI ES EL PRIMER PROYECTO → HACER LA IMAGEN CLICKEABLE */}
                   {index === 0 ? (
                     <Link
                       href="https://github.com/Diego2004-max/Portafolio.git"

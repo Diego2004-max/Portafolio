@@ -68,7 +68,6 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        {/* IMAGEN ANIMADA */}
         <div
           className="relative w-[260px] h-[260px] sm:w-[300px] sm:h-[300px]
                      mx-auto rounded-3xl shadow-lg overflow-hidden
@@ -94,7 +93,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* MENÚ LATERAL / FAB */}
+      {/* MENÚ LATERAL*/}
       <SideSectionMenu current="about" />
     </section>
   );
