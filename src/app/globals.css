@@ -2,31 +2,32 @@
 
 /* 🌤️ MODO CLARO */
 :root {
-  --bg-page: #eef2ff;
-  --bg-card: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --border-color: #d0d7ff;
+  --bg-page: #eef2ff;      /* fondo pastel */
+  --bg-card: #ffffff;      /* tarjetas blancas */
+  --text-primary: #0f172a; /* texto principal oscuro */
+  --text-secondary: #334155; /* gris fuerte */
+  --border-color: #d0d7ff; /* azul clarito */
   --shadow-light: 4px 4px 10px #d4dcff, -4px -4px 10px #ffffff;
 }
 
-/* 🌙 MODO OSCURO */
+/* 🌙 MODO OSCURO: se activa cuando el TOGGLE pone .dark en <html> */
 html.dark {
   --bg-page: #0b1120;
   --bg-card: #1b2433;
-  --text-primary: #e2e8f0;
-  --text-secondary: #cbd5e1;
+  --text-primary: #dce7ff;
+  --text-secondary: #b6c3e0;
   --border-color: #334155;
   --shadow-light: none;
 }
 
-/* BASE GLOBAL */
-html, body {
+/* ✅ Fondo global: html + body (y opcionalmente #__next) */
+html,
+body,
+#__next {
+  min-height: 100%;
   background-color: var(--bg-page) !important;
   color: var(--text-primary);
-  min-height: 100%;
-  margin: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
   width: 100%;
 }
 
-/* CARDS */
+/* Cards genéricas (por si usas la clase .card en otros lados) */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -42,14 +43,21 @@ body {
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-4px);
 }
 
-/* ANIMACIONES */
+/* Animaciones extra (las que ya tenías) */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fadeIn {
@@ -57,29 +65,37 @@ body {
 }
 
 @keyframes float-image {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
 }
 
 .animate-float-image {
   animation: float-image 3s ease-in-out infinite;
 }
 
-/* SUAVIZADO GLOBAL */
+/* Transiciones suaves globales */
 * {
-  transition: background-color 0.2s ease,
-              color 0.2s ease,
-              border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-/* SCROLLBAR */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #a5b4fc;
   border-radius: 8px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #818cf8;
 }
