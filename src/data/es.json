@@ -38,14 +38,13 @@
 
   "academic": {
     "studies": [
-      "Primaria",
-      "Secundaria",
-      "Certificado de inglés",
-      "Certificado de lectura rápida (AMI)",
-      "Ingeniería de software (5to semestre)",
-      "Tecnólogo en sistemas",
-      "Cursos de backend y frontend"
-    ]
+          "Desde joven me interesó la tecnología. En 2022 descubrí el desarrollo web y comencé a formarme mediante cursos y práctica constante en Sistemas y complemento mi preparación con certificaciones.",
+          "Certificado de inglés",
+          "Certificado de lectura rápida (AMI)",
+          "Ingeniería de software (5to semestre)",
+          "Tecnólogo en sistemas",
+          "Cursos de backend y frontend"
+]
   },
 
   "projects": {

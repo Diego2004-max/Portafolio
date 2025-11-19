@@ -38,8 +38,7 @@
 
   "academic": {
     "studies": [
-      "Elementary school",
-      "High school",
+      "I’ve been interested in technology since I was young. In 2022 I discovered web development and began learning through courses and hands-on practice. I am currently studying Systems Technology and strengthening my skills through certifications.",
       "English certificate",
       "Speed reading certificate (AMI)",
       "Software engineering (5th semester)",
@@ -50,7 +49,7 @@
 
   "projects": {
     "list": [
-      { "title": "Personal Portfolio", "desc": "Next.js + Tailwind + Pro animations.", "img": "/proyecto1.jpg" },
+      { "title": "Personal Portfolio", "desc": "Next.js + Tailwind + Pro animations.", "img": "/portafolio.jpg" },
       { "title": "School Management System", "desc": "CRUD + Dashboard + Login.", "img": "/proyecto2.jpg" },
       { "title": "Task App", "desc": "React Native + Firebase.", "img": "/proyecto3.jpg" }
     ]
