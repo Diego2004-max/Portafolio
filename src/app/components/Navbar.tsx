@@ -31,6 +31,7 @@ export default function Navbar() {
         <li><Link href="/academic">{t.nav.academic}</Link></li>
         <li><Link href="/projects">{t.nav.projects}</Link></li>
         <li><Link href="/testimonials">{t.nav.testimonials}</Link></li>
+        <li><Link href="/skills">{t.nav.skills}</Link></li>
         <li><Link href="/contact">{t.nav.contact}</Link></li>
       </ul>
 

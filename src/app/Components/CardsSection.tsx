@@ -13,6 +13,7 @@ export default function CardsSection({ t }: CardsSectionProps) {
     { icon: "🎓", title: t.nav.academic, preview: t.cards?.academic, href: "/academic" },
     { icon: "💡", title: t.nav.projects, preview: t.cards?.projects, href: "/projects" },
     { icon: "💬", title: t.nav.testimonials, preview: t.cards?.testimonials, href: "/testimonials" },
+    { icon: "🛠", title: t.nav.skills, preview: t.cards?.skills, href: "/skills" },
     { icon: "📞", title: t.nav.contact, preview: t.cards?.contact, href: "/contact" },
   ];
 

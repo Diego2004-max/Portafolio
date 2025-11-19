@@ -11,6 +11,7 @@ const fallback: SiteData = {
     academic: "",
     projects: "",
     testimonials: "",
+    skills: "",
     contact: "",
   },
 
@@ -19,6 +20,7 @@ const fallback: SiteData = {
     academic: "",
     projects: "",
     testimonials: "",
+    skills: "",
     contact: "",
   },
 
@@ -45,19 +47,31 @@ const fallback: SiteData = {
   testimonials: {
     list: [],
   },
+
+  skills: {
+    title: "",
+    languagesTitle: "",
+    frameworksTitle: "",
+    toolsTitle: "",
+    softSkillsTitle: "",
+    languages: {},
+    frameworks: {},
+    tools: {},
+    softSkillsImage: "",
+  },
 };
 
 export function getSiteData(lang: Lang): SiteData {
   const data = lang === "en" ? (en as SiteData) : (es as SiteData);
 
   return {
-    nav: data.nav,
-    cards: data.cards,
-    hero: data.hero,
-    about: data.about,
-    academic: data.academic,
-    projects: data.projects,
-    testimonials: data.testimonials
+    nav: data.nav ?? fallback.nav,
+    cards: data.cards ?? fallback.cards,
+    hero: data.hero ?? fallback.hero,
+    about: data.about ?? fallback.about,
+    academic: data.academic ?? fallback.academic,
+    projects: data.projects ?? fallback.projects,
+    testimonials: data.testimonials ?? fallback.testimonials,
+    skills: data.skills ?? fallback.skills,
   };
 }
-

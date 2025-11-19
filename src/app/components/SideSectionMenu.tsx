@@ -21,6 +21,7 @@ type SectionKey =
   | "academic"
   | "projects"
   | "testimonials"
+  | "skills"
   | "contact";
 
 interface SideSectionMenuProps {

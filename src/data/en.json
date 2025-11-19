@@ -5,32 +5,57 @@
     "subtitle": "Passionate about web development, innovation, and continuous improvement.",
     "cvLabel": "Download CV"
   },
+
   "cards": {
     "about": "I'm a developer in training, curious and focused on innovation.",
     "academic": "My academic journey and achievements that shape my professional growth.",
     "projects": "Some of the web and software projects I have developed.",
     "testimonials": "Feedback and experiences shared by colleagues and mentors.",
+    "skills": "My tech stack and professional skills.",
     "contact": "Want to collaborate with me? Get in touch easily."
   },
+
   "nav": {
     "home": "Home",
     "about": "About Me",
     "academic": "Education",
     "projects": "Projects",
     "testimonials": "Testimonials",
+    "skills": "Skills",
     "contact": "Contact"
-  }
-,
+  },
+
   "about": {
     "intro": "I'm 21 years old, I live an active life and do many activities. Some of them are:",
     "activities": [
-      { "titulo": "Sports", "descripcion": "Basketball, soccer, volleyball.", "imagen": "/depoertes2.jpg" },
-      { "titulo": "Trips", "descripcion": "Family outings every weekend.", "imagen": "/viajes.jpg" },
-      { "titulo": "Walks", "descripcion": "I like going out to explore towns", "imagen": "/viajes2.jpg" },
-      { "titulo": "Friends", "descripcion": "Going out and having fun with friends.", "imagen": "/encuentros2.jpg" },
-      { "titulo": "Study", "descripcion": "In my free time, I study and learn about software development.", "imagen": "/encuentros2.jpg" }
+      {
+        "titulo": "Sports",
+        "descripcion": "Basketball, soccer, volleyball.",
+        "imagen": "/depoertes2.jpg"
+      },
+      {
+        "titulo": "Trips",
+        "descripcion": "Family outings every weekend.",
+        "imagen": "/viajes.jpg"
+      },
+      {
+        "titulo": "Walks",
+        "descripcion": "I like going out to explore towns",
+        "imagen": "/viajes2.jpg"
+      },
+      {
+        "titulo": "Friends",
+        "descripcion": "Going out and having fun with friends.",
+        "imagen": "/encuentros2.jpg"
+      },
+      {
+        "titulo": "Study",
+        "descripcion": "In my free time, I study and learn about software development.",
+        "imagen": "/estudiar2.jpg"
+      }
     ]
   },
+
   "academic": {
     "studies": [
       "Elementary school",
@@ -42,6 +67,7 @@
       "Frontend & backend development courses"
     ]
   },
+
   "projects": {
     "list": [
       {
@@ -61,11 +87,38 @@
       }
     ]
   },
+
   "testimonials": {
     "list": [
-      { "nombre": "Nixon Burbano, Systems Engineer", "texto": "Excellent person, very responsible, fits in well with the team", "img": "/Person1.jpg" },
-      { "nombre": "Felipe Gualguan, Systems Engineer", "texto": "He´s a creative person and very resourceful in acquiring new knowledge", "img": "/Person2.jpg" },
-      { "nombre": "Jhon Chapal, Surgical instrument technician", "texto": "Good experience, I like the way of working, although we are still in the development of the program", "img": "/Person3.jpg" }
+      {
+        "nombre": "Nixon Burbano, Systems Engineer",
+        "texto": "Excellent person, very responsible, fits in well with the team",
+        "img": "/Person1.jpg"
+      },
+      {
+        "nombre": "Felipe Gualguan, Systems Engineer",
+        "texto": "He´s a creative person and very resourceful in acquiring new knowledge",
+        "img": "/Person2.jpg"
+      },
+      {
+        "nombre": "Jhon Chapal, Surgical instrument technician",
+        "texto": "Good experience, I like the way of working, although we are still in the development of the program",
+        "img": "/Person3.jpg"
+      }
     ]
+  },
+
+  "skills": {
+    "title": "Skills",
+
+    "languagesTitle": "Languages",
+    "frameworksTitle": "Frameworks & Libraries",
+    "toolsTitle": "Tools",
+    "softSkillsTitle": "Soft Skills",
+
+    "languages": {},
+    "frameworks": {},
+    "tools": {},
+    "softSkillsImage": "work.png"
   }
 }

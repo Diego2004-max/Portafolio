@@ -1,9 +1,12 @@
 export interface SiteData {
-  hero: {
-    nameLine1: string;
-    nameLine2: string;
-    subtitle: string;
-    cvLabel: string;
+  nav: {
+    home: string;
+    about: string;
+    academic: string;
+    projects: string;
+    testimonials: string;
+    skills: string;
+    contact: string;
   };
 
   cards: {
@@ -11,25 +14,20 @@ export interface SiteData {
     academic: string;
     projects: string;
     testimonials: string;
+    skills: string;
     contact: string;
   };
 
-  nav: {
-    home: string;
-    about: string;
-    academic: string;
-    projects: string;
-    testimonials: string;
-    contact: string;
+  hero: {
+    nameLine1: string;
+    nameLine2: string;
+    subtitle: string;
+    cvLabel: string;
   };
 
   about: {
     intro: string;
-    activities: {
-      titulo: string;
-      descripcion: string;
-      imagen: string;
-    }[];
+    activities: { titulo: string; descripcion: string; imagen: string }[];
   };
 
   academic: {
@@ -37,18 +35,22 @@ export interface SiteData {
   };
 
   projects: {
-    list: {
-      title: string;
-      desc: string;
-      img: string;
-    }[];
+    list: { title: string; desc: string; img: string }[];
   };
 
   testimonials: {
-    list: {
-      nombre: string;
-      texto: string;
-      img: string;
-    }[];
+    list: { nombre: string; texto: string; img: string }[];
+  };
+
+  skills: {
+    title: string;
+    languagesTitle: string;
+    frameworksTitle: string;
+    toolsTitle: string;
+    softSkillsTitle: string;
+    languages: Record<string, string>;
+    frameworks: Record<string, string>;
+    tools: Record<string, string>;
+    softSkillsImage: string;
   };
 }

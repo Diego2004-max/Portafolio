@@ -5,32 +5,37 @@
     "subtitle": "Apasionado por el desarrollo web, la innovación y la mejora continua.",
     "cvLabel": "Descargar CV"
   },
+
   "cards": {
     "about": "Soy un desarrollador en formación, curioso y enfocado en la innovación.",
     "academic": "Mi recorrido académico y los logros que marcan mi crecimiento profesional.",
-    "projects": "Algunos de los proyectos web y de software que he desarrollado.",
-    "testimonials": "Opiniones y experiencias compartidas por colegas y mentores.",
-    "contact": "¿Quieres colaborar conmigo? Ponte en contacto fácilmente."
+    "projects": "Proyectos que he desarrollado.",
+    "testimonials": "Experiencias compartidas por colegas.",
+    "skills": "Mi stack tecnológico y habilidades.",
+    "contact": "Ponte en contacto fácilmente."
   },
+
   "nav": {
     "home": "Inicio",
     "about": "Acerca de mí",
     "academic": "Formación",
     "projects": "Proyectos",
     "testimonials": "Testimonios",
+    "skills": "Habilidades",
     "contact": "Contacto"
   },
 
   "about": {
     "intro": "Tengo 21 años, mi vida es activa y hago muchas actividades. Algunas son:",
     "activities": [
-      { "titulo": "Deportes", "descripcion": "Basketball, fútbol, volleyball.", "imagen": "/depoertes2.jpg" },
+      { "titulo": "Deportes", "descripcion": "Basketball, fútbol, volleyball.", "imagen": "/deportes2.jpg" },
       { "titulo": "Paseos", "descripcion": "Familiares cada fin de semana.", "imagen": "/viajes.jpg" },
       { "titulo": "Salidas", "descripcion": "Me gusta salir a conocer pueblos.", "imagen": "/viajes2.jpg" },
       { "titulo": "Encuentros", "descripcion": "Salidas con amigos.", "imagen": "/encuentros2.jpg" },
-      { "titulo": "Estudiar", "descripcion": "En mi tiempo libre estudio y veo videos de desarrollo.", "imagen": "/estudiar2.jpg" }
+      { "titulo": "Estudiar", "descripcion": "En mi tiempo libre estudio y me capacito.", "imagen": "/estudiar2.jpg" }
     ]
   },
+
   "academic": {
     "studies": [
       "Primaria",
@@ -38,34 +43,65 @@
       "Certificado de inglés",
       "Certificado de lectura rápida (AMI)",
       "Ingeniería de software (5to semestre)",
-      "Cursando tecnólogo en sistemas",
+      "Tecnólogo en sistemas",
       "Cursos de backend y frontend"
     ]
   },
+
   "projects": {
     "list": [
-      {
-        "title": "Portafolio Personal",
-        "desc": "Desarrollado con Next.js y Tailwind, integra modo oscuro y traducción dinámica.",
-        "img": "/proyecto1.jpg"
-      },
-      {
-        "title": "Sistema de Gestión Escolar",
-        "desc": "Aplicación CRUD con autenticación y dashboard responsivo.",
-        "img": "/proyecto2.jpg"
-      },
-      {
-        "title": "App de Tareas",
-        "desc": "Aplicación móvil para gestionar tareas con React Native y Firebase.",
-        "img": "/proyecto3.jpg"
-      }
+      { "title": "Portafolio Personal", "desc": "Next.js + Tailwind + Animaciones Pro.", "img": "/proyecto1.jpg" },
+      { "title": "Sistema Escolar", "desc": "CRUD + Dashboard + Login.", "img": "/proyecto2.jpg" },
+      { "title": "App de Tareas", "desc": "React Native + Firebase.", "img": "/proyecto3.jpg" }
     ]
   },
+
   "testimonials": {
     "list": [
-      { "nombre": "Nixon Burbano, Ingeniero en sistemas", "texto": "Excelente persona, muy responsable, tiene buen acoplamiento al equipo", "img": "/Person1.jpg" },
-      { "nombre": "Felipe Gualguan, Ingeniero en sistemas", "texto": "Es una persona creativa y muy recursiva en adquirir nuevo conocimiento", "img": "/Person2.jpg" },
-      { "nombre": "Jhon Chapal, Instrumentador quirurjuco", "texto": "Buena experiencia, me gusta como es la manera de trabajar, aun que todavia estamos en el desarrollo del programa", "img": "/Person3.jpg"}
+      { "nombre": "Nixon Burbano", "texto": "Excelente persona, responsable y dedicado.", "img": "/Person1.jpg" },
+      { "nombre": "Felipe Gualguan", "texto": "Muy creativo y rápido aprendiendo.", "img": "/Person2.jpg" },
+      { "nombre": "Jhon Chapal", "texto": "Gran trabajo en equipo, comprometido.", "img": "/Person3.jpg" }
     ]
+  },
+
+  "skills": {
+    "title": "Habilidades",
+    "languagesTitle": "Lenguajes",
+    "frameworksTitle": "Frameworks & Librerías",
+    "toolsTitle": "Herramientas",
+    "softSkillsTitle": "Habilidades Blandas",
+
+    "languages": {
+      "JavaScript": "js.png",
+      "TypeScript": "ts.png",
+      "Python": "py.jpg",
+      "Java": "java.png",
+      "HTML": "html.png",
+      "CSS": "css.png",
+      "SQL": "mysql.png",
+      "MongoDB": "MongoDB.png"
+    },
+
+    "frameworks": {
+      "React": "react.png",
+      "Next.js": "next.png",
+      "Node.js": "node.png",
+      "TailwindCSS": "tailwind.jpg",
+      "SpringBoot": "SpringBoot.png",
+      "FramerMotion": "framer.png"
+    },
+
+    "tools": {
+      "Git": "gt.png",
+      "GitHub": "git.png",
+      "VSCode": "vscode.jpg",
+      "Postman": "postman.png",
+      "MySQL": "mysql.png",
+      "MongoDB": "MongoDB.png",
+      "Figma": "figma.png",
+      "Vercel": "vercel.png"
+    },
+
+    "softSkillsImage": "work.png"
   }
 }
