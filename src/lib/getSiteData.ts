@@ -29,8 +29,6 @@ const fallback: SiteData = {
     cvLabel: "",
   },
 
-  socials: [],
-
   about: {
     intro: "",
     activities: [],
@@ -53,13 +51,13 @@ export function getSiteData(lang: Lang): SiteData {
   const data = lang === "en" ? (en as SiteData) : (es as SiteData);
 
   return {
-    nav: data.nav ?? fallback.nav,
-    cards: data.cards ?? fallback.cards,
-    hero: data.hero ?? fallback.hero,
-    socials: data.socials ?? fallback.socials,
-    about: data.about ?? fallback.about,
-    academic: data.academic ?? fallback.academic,
-    projects: data.projects ?? fallback.projects,
-    testimonials: data.testimonials ?? fallback.testimonials,
+    nav: data.nav,
+    cards: data.cards,
+    hero: data.hero,
+    about: data.about,
+    academic: data.academic,
+    projects: data.projects,
+    testimonials: data.testimonials
   };
 }
+

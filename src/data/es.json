@@ -63,9 +63,9 @@
   },
   "testimonials": {
     "list": [
-      { "nombre": "Nixon, Ingeniero en sistemas", "texto": "Great teamwork and very professional result.", "img": "Persona1.jpg" },
-      { "nombre": "Felipe, Ingeniero en sistemas", "texto": "I learned a lot about React and Tailwind, it was fun.", "img": "Persona2.jpg" },
-      { "nombre": "Jhon, Instrumentador quirurjuco", "texto": "Amazing experience, the outcome exceeded expectations.", "img": "Persona3.jpg" }
+      { "nombre": "Nixon Burbano, Ingeniero en sistemas", "texto": "Excelente persona, muy responsable, tiene buen acoplamiento al equipo", "img": "/Person1.jpg" },
+      { "nombre": "Felipe Gualguan, Ingeniero en sistemas", "texto": "Es una persona creativa y muy recursiva en adquirir nuevo conocimiento", "img": "/Person2.jpg" },
+      { "nombre": "Jhon Chapal, Instrumentador quirurjuco", "texto": "Buena experiencia, me gusta como es la manera de trabajar, aun que todavia estamos en el desarrollo del programa", "img": "/Person3.jpg"}
     ]
   }
 }

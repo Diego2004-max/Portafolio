@@ -1,11 +1,9 @@
 export interface SiteData {
-  nav: {
-    home: string;
-    about: string;
-    academic: string;
-    projects: string;
-    testimonials: string;
-    contact: string;
+  hero: {
+    nameLine1: string;
+    nameLine2: string;
+    subtitle: string;
+    cvLabel: string;
   };
 
   cards: {
@@ -16,17 +14,14 @@ export interface SiteData {
     contact: string;
   };
 
-  hero: {
-    nameLine1: string;
-    nameLine2: string;
-    subtitle: string;
-    cvLabel: string;
+  nav: {
+    home: string;
+    about: string;
+    academic: string;
+    projects: string;
+    testimonials: string;
+    contact: string;
   };
-
-  socials: {
-    label: string;
-    href: string;
-  }[];
 
   about: {
     intro: string;
@@ -53,6 +48,7 @@ export interface SiteData {
     list: {
       nombre: string;
       texto: string;
+      img: string;
     }[];
   };
 }

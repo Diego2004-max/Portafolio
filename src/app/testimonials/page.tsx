@@ -28,6 +28,8 @@ export default function TestimonialsPage() {
         <div className="flex flex-wrap justify-center gap-12">
           {t.testimonials.list.map((test: any, i: number) => (
             <div key={i} className="relative flex flex-col items-center group">
+
+              {/* FOTO DEL TESTIMONIO */}
               <div
                 className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden
                            shadow-md border-4 border-[var(--border-color)]
@@ -35,13 +37,14 @@ export default function TestimonialsPage() {
                            transition-transform duration-300 group-hover:scale-110"
               >
                 <Image
-                  src="/Person1.jpg"
+                  src={`/` + test.img.replace(/^\//, "")}
                   alt={test.nombre}
                   fill
                   className="object-cover rounded-full"
                 />
               </div>
 
+              {/* TARJETA FLOTANTE */}
               <div
                 className="absolute bottom-[115%] left-1/2 -translate-x-1/2 opacity-0
                            group-hover:opacity-100 group-hover:-translate-y-2
@@ -56,6 +59,7 @@ export default function TestimonialsPage() {
                   <p className="text-xs font-semibold">— {test.nombre}</p>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
