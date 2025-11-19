@@ -51,8 +51,8 @@ export default function ProjectsPage() {
                 <Image
                   src={p.img}
                   alt={p.title}
-                  width={110}
-                  height={110}
+                  width={500}
+                  height={500}
                   className="rounded-lg shadow-md object-contain
                              bg-[var(--bg-card)] p-2
                              border border-[var(--border-color)]"
