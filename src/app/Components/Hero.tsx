@@ -61,7 +61,7 @@ export default function Hero() {
         className="relative w-40 h-40 mb-6"
       >
         <Image
-          src="/me.jpg"
+          src="/Me.jpg"
           alt="Foto de perfil"
           fill
           className="

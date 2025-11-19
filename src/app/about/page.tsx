@@ -16,7 +16,7 @@ export default function AboutPage() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const imagenActual =
-    actividades.find((a: any) => a.titulo === hovered)?.imagen ?? "/me.jpg";
+    actividades.find((a: any) => a.titulo === hovered)?.imagen ?? "/Me.jpg";
 
   return (
     <section

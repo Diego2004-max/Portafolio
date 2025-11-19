@@ -18,16 +18,17 @@ export default function Navbar() {
   return (
     <nav
       className="
-        fixed top-4 left-1/2 -translate-x-1/2 z-50
+        fixed top-3 left-1/2 -translate-x-1/2 z-50
         bg-[var(--bg-card)]/90 backdrop-blur-xl
         border border-[var(--border-color)]
-        rounded-2xl px-6 py-3 shadow-md
-        w-[90%] max-w-5xl
+        rounded-2xl shadow-lg
+        w-[94%] max-w-5xl 
+        px-4 py-3
         flex items-center justify-between
       "
     >
       {/* DESKTOP MENU */}
-      <ul className="hidden md:flex gap-6 text-sm font-semibold">
+      <ul className="hidden md:flex gap-5 text-sm font-semibold">
         <li><Link href="/">{t.nav.home}</Link></li>
         <li><Link href="/about">{t.nav.about}</Link></li>
         <li><Link href="/academic">{t.nav.academic}</Link></li>
@@ -37,8 +38,8 @@ export default function Navbar() {
         <li><Link href="/contact">{t.nav.contact}</Link></li>
       </ul>
 
-      {/* TOGGLES */}
-      <div className="hidden md:flex gap-3">
+      {/* TOGGLES DESKTOP */}
+      <div className="hidden md:flex gap-2">
         <LanguageToggle />
         <ThemeToggle />
       </div>
@@ -61,9 +62,9 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="
               absolute top-16 left-0 w-full
-              bg-[var(--bg-card)] shadow-xl rounded-2xl
+              bg-[var(--bg-card)] rounded-2xl shadow-xl
               border border-[var(--border-color)]
-              md:hidden p-4 flex flex-col gap-4
+              md:hidden p-5 flex flex-col gap-4
             "
           >
             <Link href="/" onClick={() => setOpen(false)}>{t.nav.home}</Link>
