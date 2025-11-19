@@ -49,9 +49,9 @@
 
   "projects": {
     "list": [
-      { "title": "Portafolio Personal", "desc": "Next.js + Tailwind + Animaciones Pro.", "img": "/proyecto1.jpg" },
-      { "title": "Sistema Escolar", "desc": "CRUD + Dashboard + Login.", "img": "/proyecto2.jpg" },
-      { "title": "App de Tareas", "desc": "React Native + Firebase.", "img": "/proyecto3.jpg" }
+      { "title": "Portafolio Personal", "desc": "Next.js + Tailwind + Animaciones Pro.", "img": "/portafolio.jpg" },
+      { "title": "Sistema Escolar", "desc": "CRUD + Dashboard + Login.", "img": "/dash.jpg" },
+      { "title": "App de Tareas", "desc": "React Native + Firebase.", "img": "/tareas.jpg" }
     ]
   },
 

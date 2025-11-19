@@ -50,8 +50,8 @@
   "projects": {
     "list": [
       { "title": "Personal Portfolio", "desc": "Next.js + Tailwind + Pro animations.", "img": "/portafolio.jpg" },
-      { "title": "School Management System", "desc": "CRUD + Dashboard + Login.", "img": "/proyecto2.jpg" },
-      { "title": "Task App", "desc": "React Native + Firebase.", "img": "/proyecto3.jpg" }
+      { "title": "School Management System", "desc": "CRUD + Dashboard + Login.", "img": "dash.jpg" },
+      { "title": "Task App", "desc": "React Native + Firebase.", "img": "/tareas.jpg" }
     ]
   },
 
