@@ -2,60 +2,39 @@
 
 /* 🌤️ Modo claro por defecto */
 :root {
-  --bg-page: #eef2ff;          /* Muy suave pero con más contraste */
-  --bg-card: #ffffff;          /* Blanco puro */
-  --text-primary: #1e3a8a;     /* Azul fuerte elegante */
-  --text-secondary: #1e293b; /* mucho más visible */
-  --border-color: #d0d7ff;   /* más contraste */
-  --shadow-light: 8px 8px 16px #d0dbff, -8px -8px 16px #ffffff;
+  --bg-page: #eef2ff;         /* fondo pastel */
+  --bg-card: #ffffff;         /* tarjetas blancas */
+  --text-primary: #0f172a;    /* azul negro profesional */
+  --text-secondary: #334155;  /* gris fuerte */
+  --border-color: #d0d7ff;    /* azul clarito (corregido) */
+  --shadow-light: 4px 4px 10px #d4dcff, -4px -4px 10px #ffffff;
 }
 
-/* 🌙 Modo oscuro */
+/* 🌙 Modo oscuro global */
 .dark {
-  --bg-page: #0b1120;     /* <--- FONDO GLOBAL OSCURO */
+  --bg-page: #0b1120;
   --bg-card: #1b2433;
-  --bg-hover: #273347;
-  --text-primary: #dce7ff;
-  --text-secondary: #b6c3e0;
-  --border-color: #334155;
-  --shadow-light: 0 0 0 transparent; /* elimina sombras claras */
-}
-
-/* 🌙 Alternativa: data-theme oscuro */
-[data-theme="dark"] {
-  --bg-page: #0f172a;
-  --bg-card: #1e293b;
   --text-primary: #e2e8f0;
   --text-secondary: #cbd5e1;
   --border-color: #334155;
-  --shadow-light: 6px 6px 12px #0a0f1a, -6px -6px 12px #1e293b;
+  --shadow-light: none;
 }
 
-/* 📜 Base */
+/* 📜 Base global */
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-page);
   color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  min-height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
+  min-height: 100vh;
+  width: 100%;
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg-page);
   color: var(--text-primary);
-  transition: all 0.4s ease;
 }
 
 /* 🌈 Animaciones */
@@ -63,29 +42,22 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fadeIn { animation: fadeIn 0.4s ease-in-out forwards; }
 
+/* Flotación */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-
 .animate-float { animation: float 3s ease-in-out infinite; }
 
-.hover-glow:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-.hover-lift:hover { transform: translateY(-5px); }
-
 @keyframes float-image {
-  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-  50% { transform: translateY(-10px) translateX(6px) scale(1.03); }
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
 }
-
 .animate-float-image { animation: float-image 3s ease-in-out infinite; }
 
-.page-enter { animation: fadeIn 0.8s ease-out forwards; }
-
-/* 🧩 Cards generales */
+/* Cards */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -93,33 +65,24 @@ body {
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 }
-
 .card:hover { transform: translateY(-4px); }
 
-.cards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* 🧠 Transiciones suaves */
+/* Transiciones suaves */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
 }
 
+/* Botones */
 button {
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-button:hover { filter: brightness(1.1); }
-
-/* 🌐 Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-page); }
 ::-webkit-scrollbar-thumb {
   background: #a5b4fc;
   border-radius: 8px;
