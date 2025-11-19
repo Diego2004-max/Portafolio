@@ -102,6 +102,16 @@
       "Vercel": "vercel.png"
     },
 
-    "softSkillsImage": "work.png"
+    "softSkillsImage": "work.png",
+
+    "softSkillsList": [
+      "Teamwork",
+      "Communication",
+      "Leadership",
+      "Problem solving",
+      "Adaptability",
+      "Critical thinking",
+      "Organization"
+    ]
   }
 }

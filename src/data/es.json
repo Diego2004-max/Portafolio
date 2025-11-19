@@ -102,6 +102,17 @@
       "Vercel": "vercel.png"
     },
 
-    "softSkillsImage": "work.png"
+    "softSkillsImage": "work.png", 
+
+    "softSkillsList": [
+    "Trabajo en equipo",
+    "Comunicación",
+    "Liderazgo",
+    "Resolución de problemas",
+    "Adaptabilidad",
+    "Pensamiento crítico",
+    "Organización"
+]
+
   }
 }

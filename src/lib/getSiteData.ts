@@ -58,7 +58,7 @@ const fallback: SiteData = {
     frameworks: {},
     tools: {},
     softSkillsImage: "",
-  },
+  }
 };
 
 export function getSiteData(lang: Lang): SiteData {
