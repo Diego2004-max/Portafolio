@@ -11,7 +11,11 @@ interface CardBaseProps {
 
 export default function CardBase({ icon, title, href, preview }: CardBaseProps) {
   return (
-    <Link href={href} className="no-underline">
+    <Link
+      href={href}
+      className="no-underline block"   // Link envuelve todo
+      prefetch
+    >
       <motion.div
         whileHover={{ scale: 1.04, y: -4 }}
         transition={{ type: "spring", stiffness: 200, damping: 16 }}

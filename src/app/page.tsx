@@ -9,9 +9,9 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       className="
-        min-h-screen w-full
-        flex flex-col
-        bg-[var(--bg-page)]
+        min-h-screen 
+        flex flex-col items-center justify-center 
+        bg-[var(--bg-page)] 
         text-[var(--text-primary)]
         transition-colors duration-300
       "

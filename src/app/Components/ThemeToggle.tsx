@@ -2,73 +2,72 @@
 import { useEffect, useState } from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
 
+type ThemeMode = 'light' | 'dark' | 'system';
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState('system');
+  const [theme, setTheme] = useState<ThemeMode>('system');
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme') || 'system';
+    const saved = (localStorage.getItem('theme') as ThemeMode) || 'system';
     setTheme(saved);
     applyTheme(saved);
   }, []);
 
-  const applyTheme = (mode: string) => {
+  const applyTheme = (mode: ThemeMode) => {
     const html = document.documentElement;
 
-    if (mode === 'light') {
-      html.classList.remove('dark');        // 🔥 FIX 1
-      html.setAttribute('data-theme', 'light');
+    if (mode === 'system') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      html.classList.toggle('dark', prefersDark);
+      html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
       return;
     }
 
-    if (mode === 'dark') {
-      html.classList.add('dark');           // 🔥 FIX 2
-      html.setAttribute('data-theme', 'dark');
-      return;
-    }
-
-    // system
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      html.classList.add('dark');
-      html.setAttribute('data-theme', 'dark');
-    } else {
-      html.classList.remove('dark');        // 🔥 FIX 3
-      html.setAttribute('data-theme', 'light');
-    }
+    html.classList.toggle('dark', mode === 'dark');
+    html.setAttribute('data-theme', mode);
   };
 
-  const changeTheme = (mode: string) => {
+  const changeTheme = (mode: ThemeMode) => {
     setTheme(mode);
     localStorage.setItem('theme', mode);
     applyTheme(mode);
   };
 
+  const baseBtn =
+    'p-2 rounded-md flex items-center justify-center transition-colors';
+  const activeBtn =
+    'bg-[var(--border-color)]/60 text-[var(--text-primary)] shadow-sm';
+  const inactiveBtn = 'bg-transparent text-[var(--text-primary)] opacity-80';
+
   return (
-    <div className="flex gap-1 bg-slate-200/60 dark:bg-slate-700/40 p-1 rounded-lg">
+    <div
+      className="
+        flex gap-1 p-1 rounded-lg
+        bg-[var(--bg-card)]
+        border border-[var(--border-color)]
+        shadow-sm
+      "
+    >
       <button
         onClick={() => changeTheme('light')}
-        className={`p-2 rounded-md ${
-          theme === 'light' ? 'bg-white shadow-md dark:bg-slate-600' : ''
-        }`}
-        title="Light Mode"
+        className={`${baseBtn} ${theme === 'light' ? activeBtn : inactiveBtn}`}
+        title="Modo claro"
       >
         <Sun size={16} />
       </button>
+
       <button
         onClick={() => changeTheme('dark')}
-        className={`p-2 rounded-md ${
-          theme === 'dark' ? 'bg-white shadow-md dark:bg-slate-600' : ''
-        }`}
-        title="Dark Mode"
+        className={`${baseBtn} ${theme === 'dark' ? activeBtn : inactiveBtn}`}
+        title="Modo oscuro"
       >
         <Moon size={16} />
       </button>
+
       <button
         onClick={() => changeTheme('system')}
-        className={`p-2 rounded-md ${
-          theme === 'system' ? 'bg-white shadow-md dark:bg-slate-600' : ''
-        }`}
-        title="System Mode"
+        className={`${baseBtn} ${theme === 'system' ? activeBtn : inactiveBtn}`}
+        title="Usar tema del sistema"
       >
         <Monitor size={16} />
       </button>
