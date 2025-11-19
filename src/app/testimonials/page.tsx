@@ -44,11 +44,11 @@ export default function TestimonialsPage() {
                 />
               </div>
 
-              {/* TARJETA FLOTANTE */}
+              {/* TARJETA FLOTANTE ABAJO */}
               <div
-                className="absolute bottom-[115%] left-1/2 -translate-x-1/2 opacity-0
-                           group-hover:opacity-100 group-hover:-translate-y-2
-                           transition-all duration-500 z-10"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 opacity-0
+                           group-hover:opacity-100 group-hover:translate-y-2
+                           transition-all duration-500 z-20"
               >
                 <div
                   className="bg-[var(--bg-card)] text-[var(--text-primary)]
