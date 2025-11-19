@@ -63,9 +63,9 @@
   },
   "testimonials": {
     "list": [
-      { "nombre": "Andrés", "texto": "El trabajo en equipo fue excelente y la página quedó muy profesional." },
-      { "nombre": "Carlos", "texto": "Aprendí mucho sobre React y Tailwind, un proyecto divertido y útil." },
-      { "nombre": "Julián", "texto": "Increíble experiencia, los resultados superaron las expectativas." }
+      { "nombre": "Nixon, Ingeniero en sistemas", "texto": "Great teamwork and very professional result.", "img": "Persona1.jpg" },
+      { "nombre": "Felipe, Ingeniero en sistemas", "texto": "I learned a lot about React and Tailwind, it was fun.", "img": "Persona2.jpg" },
+      { "nombre": "Jhon, Instrumentador quirurjuco", "texto": "Amazing experience, the outcome exceeded expectations.", "img": "Persona3.jpg" }
     ]
   }
 }

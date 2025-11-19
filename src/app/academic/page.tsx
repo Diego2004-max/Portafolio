@@ -1,118 +1,131 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "../../context/LanguageContext";
-import { getSiteData } from "../../lib/getSiteData";
+import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { getSiteData } from "@/lib/getSiteData";
 import SideSectionMenu from "../components/SideSectionMenu";
+import { motion } from "framer-motion";
 
 export default function AcademicPage() {
   const { language } = useLanguage();
   const t = getSiteData(language);
 
-  const estudios: string[] = t.academic.studies;
+  const estudios = t.academic.studies;
 
   const lenguajes = [
     { src: "/py.jpg", alt: "Python" },
     { src: "/java.png", alt: "Java" },
     { src: "/html.png", alt: "HTML" },
-    { src: "/css.png", alt: "CSS" },
+    { src: "/css.png", alt: "CSS" }
   ];
 
   return (
     <section
       id="academic"
       className="
-        min-h-screen
+        min-h-screen 
+        flex items-start justify-center 
         bg-[var(--bg-page)]
-        flex items-center justify-center
-        p-8 md:p-10
+        pt-32 px-6 pb-16
+        transition-all
         text-[var(--text-primary)]
       "
     >
+      {/* CARD PRINCIPAL */}
       <div
         className="
+          relative 
           bg-[var(--bg-card)]
-          rounded-3xl
-          shadow-xl
+          rounded-3xl shadow-xl 
           border border-[var(--border-color)]
-          w-full max-w-6xl
-          flex flex-col items-center
-          text-center
-          p-10 md:p-14
-          space-y-10
+          w-full max-w-6xl 
+          p-8 md:p-14
         "
       >
-        <h1 className="text-3xl font-bold mb-2 text-[var(--text-primary)]">
+        {/* TÍTULO */}
+        <h1 className="text-4xl font-bold mb-8 text-[var(--text-primary)]">
           {t.nav.academic}
         </h1>
 
+        {/* LISTA DE ESTUDIOS */}
         <ul
           className="
-            text-[var(--text-secondary)]
-            text-[17px]
-            text-left
-            list-disc list-inside
-            leading-relaxed
-            space-y-2
-            max-w-2xl mx-auto
+            text-[var(--text-secondary)] 
+            text-lg 
+            list-disc list-inside 
+            leading-relaxed 
+            space-y-2 
+            mb-14
           "
         >
-          {estudios.map((texto, i) => (
-            <li
-              key={i}
-              className="hover:text-blue-600 transition-colors cursor-default"
+          {estudios.map((texto: string, i: number) => (
+            <li 
+              key={i} 
+              className="hover:text-blue-600 transition-colors"
             >
               {texto}
             </li>
           ))}
         </ul>
 
-        {/* CARRUSEL HORIZONTAL DE LENGUAJES */}
-        <div className="relative w-full overflow-hidden py-10">
-          <div className="flex w-max animate-marquee gap-10 md:gap-16">
+        {/* CARRUSEL ANIMADO */}
+        <div className="relative w-full overflow-hidden py-4">
+          <motion.div
+            className="flex w-max gap-20"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 22,
+            }}
+          >
             {[...lenguajes, ...lenguajes].map((l, i) => (
-              <div
+              <motion.div
                 key={i}
+                whileHover={{ scale: 1.14 }}
                 className="
-                  flex-shrink-0
-                  bg-[var(--bg-card)]
-                  rounded-2xl
-                  shadow-md
-                  p-5
-                  hover:scale-110
-                  transition-transform duration-300
+                  flex-shrink-0 
+                  bg-[var(--bg-card)] 
+                  rounded-2xl 
+                  shadow-md 
+                  p-6 
                   border border-[var(--border-color)]
                 "
               >
                 <Image
                   src={l.src}
                   alt={l.alt}
-                  width={90}
-                  height={90}
+                  width={110}
+                  height={110}
                   className="object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Animación marquee */}
-        <style jsx>{`
-          @keyframes marquee {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-marquee {
-            animation: marquee 25s linear infinite;
-          }
-        `}</style>
+        {/* BOTÓN HOME */}
+        <div className="flex justify-center mt-12">
+          <Link href="/">
+            <button
+              className="
+                bg-blue-500 hover:bg-blue-600 
+                text-white 
+                px-8 py-3 
+                rounded-md 
+                shadow-md 
+                transition-all
+              "
+            >
+              Home
+            </button>
+          </Link>
+        </div>
       </div>
 
-      <SideSectionMenu />
+      {/* MENÚ LATERAL */}
+      <SideSectionMenu current="academic" />
     </section>
   );
 }

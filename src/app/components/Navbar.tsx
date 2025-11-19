@@ -26,12 +26,12 @@ export default function Navbar() {
       "
     >
       <ul className="flex gap-5 text-sm font-semibold">
-        <li><Link href="#hero">{t.nav.home}</Link></li>
-        <li><Link href="#about">{t.nav.about}</Link></li>
-        <li><Link href="#academic">{t.nav.academic}</Link></li>
-        <li><Link href="#projects">{t.nav.projects}</Link></li>
-        <li><Link href="#testimonials">{t.nav.testimonials}</Link></li>
-        <li><Link href="#contact">{t.nav.contact}</Link></li>
+        <li><Link href="/">{t.nav.home}</Link></li>
+        <li><Link href="/about">{t.nav.about}</Link></li>
+        <li><Link href="/academic">{t.nav.academic}</Link></li>
+        <li><Link href="/projects">{t.nav.projects}</Link></li>
+        <li><Link href="/testimonials">{t.nav.testimonials}</Link></li>
+        <li><Link href="/contact">{t.nav.contact}</Link></li>
       </ul>
 
       <div className="flex items-center gap-3">
