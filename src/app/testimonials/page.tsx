@@ -44,7 +44,6 @@ export default function TestimonialsPage() {
                 />
               </div>
 
-              {/* TARJETA FLOTANTE ABAJO */}
               <div
                 className="absolute top-full left-1/2 -translate-x-1/2 mt-4 opacity-0
                            group-hover:opacity-100 group-hover:translate-y-2

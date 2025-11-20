@@ -43,7 +43,7 @@ export default function SkillsPage() {
           {t.skills.title}
         </motion.h1>
 
-        {/* ---------- LENGUAJES ---------- */}
+        {/*LENGUAJES*/}
         <motion.div variants={fadeUp} className="mb-16">
           <h2 className="text-2xl font-semibold mb-6">{t.skills.languagesTitle}</h2>
 
@@ -64,7 +64,7 @@ export default function SkillsPage() {
           </div>
         </motion.div>
 
-        {/* ---------- FRAMEWORKS ---------- */}
+        {/*FRAMEWORKS */}
         <motion.div variants={fadeUp} className="mb-16">
           <h2 className="text-2xl font-semibold mb-6">{t.skills.frameworksTitle}</h2>
 
@@ -85,7 +85,7 @@ export default function SkillsPage() {
           </div>
         </motion.div>
 
-        {/* ---------- HERRAMIENTAS ---------- */}
+        {/*HERRAMIENTAS */}
         <motion.div variants={fadeUp} className="mb-16">
           <h2 className="text-2xl font-semibold mb-6">{t.skills.toolsTitle}</h2>
 
@@ -106,7 +106,7 @@ export default function SkillsPage() {
           </div>
         </motion.div>
 
-        {/* ---------- SOFT SKILLS ---------- */}
+        {/*SOFT SKILLS */}
         <motion.div variants={fadeUp}>
           <h2 className="text-2xl font-semibold mb-6">{t.skills.softSkillsTitle}</h2>
 

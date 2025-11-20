@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-/* 🌤️ MODO CLARO */
+/*MODO CLARO */
 :root {
-  --bg-page: #eef2ff;      /* fondo pastel */
-  --bg-card: #ffffff;      /* tarjetas blancas */
-  --text-primary: #0f172a; /* texto principal oscuro */
-  --text-secondary: #334155; /* gris fuerte */
-  --border-color: #d0d7ff; /* azul clarito */
+  --bg-page: #eef2ff;  
+  --bg-card: #ffffff;   
+  --text-primary: #0f172a; 
+  --text-secondary: #334155; 
+  --border-color: #d0d7ff;
   --shadow-light: 4px 4px 10px #d4dcff, -4px -4px 10px #ffffff;
 }
 
-/* 🌙 MODO OSCURO: se activa cuando el TOGGLE pone .dark en <html> */
+/*MODO OSCURO*/
 html.dark {
   --bg-page: #0b1120;
   --bg-card: #1b2433;
@@ -20,7 +20,7 @@ html.dark {
   --shadow-light: none;
 }
 
-/* ✅ Fondo global: html + body (y opcionalmente #__next) */
+
 html,
 body,
 #__next {
@@ -35,7 +35,7 @@ body {
   width: 100%;
 }
 
-/* Cards genéricas (por si usas la clase .card en otros lados) */
+
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -48,7 +48,6 @@ body {
   transform: translateY(-4px);
 }
 
-/* Animaciones extra (las que ya tenías) */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -78,7 +77,6 @@ body {
   animation: float-image 3s ease-in-out infinite;
 }
 
-/* Transiciones suaves globales */
 * {
   transition:
     background-color 0.2s ease,

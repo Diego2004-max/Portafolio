@@ -29,7 +29,7 @@
   "about": {
     "intro": "Tengo 21 años, mi vida es activa y hago muchas actividades. Algunas son:",
     "activities": [
-      { "titulo": "Deportes", "descripcion": "Basketball, fútbol, volleyball.", "imagen": "/deportes2.jpg" },
+      { "titulo": "Deportes", "descripcion": "Basketball, fútbol, volleyball.", "imagen": "/Deportes.jpg" },
       { "titulo": "Paseos", "descripcion": "Familiares cada fin de semana.", "imagen": "/viajes.jpg" },
       { "titulo": "Salidas", "descripcion": "Me gusta salir a conocer pueblos.", "imagen": "/viajes2.jpg" },
       { "titulo": "Encuentros", "descripcion": "Salidas con amigos.", "imagen": "/encuentros2.jpg" },
